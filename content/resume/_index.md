@@ -9,7 +9,7 @@ aliases:
 
 <div style="height: 92vh;">
   <iframe
-    src="andrew-luo-resume-yay.pdf"
+    src="{{< asset-url "resume/andrew-luo-resume-yay.pdf" >}}"
     width="100%"
     height="100%"
     style="border: 1px solid #ddd; border-radius: 8px;"
@@ -17,4 +17,4 @@ aliases:
   </iframe>
 </div>
 
-[Open resume in a new tab](andrew-luo-resume-yay.pdf)
+[Open resume in a new tab]({{< asset-url "resume/andrew-luo-resume-yay.pdf" >}})
