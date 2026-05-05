@@ -1,0 +1,43 @@
+<p class="text-xs text-neutral-500 dark:text-neutral-400">Vibed with Cursor :)</p>
+<div class="footer-ascii-wrap" aria-hidden="true">
+  <pre class="footer-ascii-art">
+        <span class="smoke smoke-0">`</span><span class="smoke smoke-1">'</span><span class="smoke smoke-2">:</span><span class="smoke smoke-3">:</span><span class="smoke smoke-4">.</span>
+    _________H ,%%&%,
+   /\     _   \%&&%%&%
+  /  \___/^\___\%&%%&&
+  |  | []   [] |%\Y&%'
+  |  |   .-.   | ||  
+~~@._|@@_|||_@@|~||~~~~~~~~~~~~~
+     `""") )"""`
+  </pre>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const items = document.querySelectorAll(".timeline-item");
+    if (!items.length) return;
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      items.forEach((item) => item.classList.add("timeline-in-view"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("timeline-in-view");
+          } else {
+            entry.target.classList.remove("timeline-in-view");
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" }
+    );
+
+    items.forEach((item) => {
+      item.classList.add("timeline-prep");
+      observer.observe(item);
+    });
+  });
+</script>

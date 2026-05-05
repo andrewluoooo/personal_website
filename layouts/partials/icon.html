@@ -1,0 +1,19 @@
+{{- $iconName := printf "%v" . -}}
+{{- if eq $iconName "substack" -}}
+  <span class="icon relative inline-block px-1 align-text-bottom">
+    <img
+      src="{{ "img/substack-logo.png" | relURL }}"
+      alt=""
+      class="h-[1.05em] w-[1.05em] rounded-[0.12em] object-cover"
+      loading="lazy"
+      decoding="async"
+    />
+  </span>
+{{- else -}}
+{{- $icon := resources.Get (print "icons/" $iconName ".svg") -}}
+{{- if $icon -}}
+  <span class="icon relative inline-block px-1 align-text-bottom">
+    {{- $icon.Content | safeHTML -}}
+  </span>
+{{- end -}}
+{{- end -}}

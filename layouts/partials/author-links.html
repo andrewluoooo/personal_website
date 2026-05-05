@@ -1,0 +1,30 @@
+{{ with site.Language.Params.Author.links }}
+  <div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+    {{ range $links := . }}
+      {{ range $name, $url := $links }}
+        <a
+          class="px-1 transition-transform hover:scale-125 hover:text-primary-700 dark:hover:text-primary-400"
+          style="will-change:transform;"
+          href="{{ $url | safeURL }}"
+          target="_blank"
+          aria-label="{{ $name | title }}"
+          rel="me noopener noreferrer"
+        >
+          {{ if eq (lower $name) "substack" }}
+            <span class="icon relative inline-block px-1 align-text-bottom">
+              <img
+                src="{{ "img/substack-logo.png" | relURL }}"
+                alt=""
+                style="width: 1em; height: 1em; display: block; border-radius: 0.12em; object-fit: cover;"
+                loading="lazy"
+                decoding="async"
+              />
+            </span>
+          {{ else }}
+            {{ partial "icon.html" $name }}
+          {{ end }}
+        </a>
+      {{ end }}
+    {{ end }}
+  </div>
+{{ end }}

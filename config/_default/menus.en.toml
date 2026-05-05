@@ -1,17 +1,7 @@
 [[main]]
-	name = "about"
-	pageRef = "about"
-	weight = 10
-
-[[main]]
 	name = "writings"
 	pageRef = "writings"
 	weight = 20
-
-[[main]]
-	name = "notes"
-	pageRef = "notes"
-	weight = 25
 
 [[main]]
 	name = "projects"	
@@ -19,19 +9,22 @@
 	weight = 30
 
 [[main]]
-	name = "music"
-	pageRef = "music"
-	weight = 35
-
-[[main]]
-	name = "cv"
-	pageRef = "cv"	
+	name = "resume"
+	pageRef = "resume"
 	weight = 40
 
 [[main]]
-	name = "contact"
-	pageRef = "contact"	
-	weight = 50
+	name = "publications"
+	pageRef = "publications"
+	weight = 45
+
+[[main]]
+	identifier = "appearance"
+	weight = 98
+	[main.params]
+		action = "appearance"
+		icon = "moon"
+		showName = false
 
 
 [[main]]

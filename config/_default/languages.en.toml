@@ -2,17 +2,12 @@ title = "andrew luo"
 
 [params.author]
 name = "andrew luo"
-image = "img/me.jpg"
+image = "img/me.png"
 headline = "engineer, sound-smith, essays"
 bio = "engineer, sound-smith, essays"
 links = [
 	{ email = "andrew.luo25@gmail.com" },
-	{ brld = "https://www.brldsound.com" },
 	{ linkedin = "https://www.linkedin.com/in/andluo/" },
 	{ instagram = "https://www.instagram.com/andrewlu.ooo/" },
-	{ github = "https://github.com/andrewlu000" },
-	{ faceit = "https://www.faceit.com/en/players/alu0" },
-	{ soundcloud = "https://soundcloud.com/fouroh" },
-	{ spotify = "https://spotify.com" },
-	{ patreon = "https://patreon.com/crappysoundsmith" }
+	{ github = "https://github.com/andrewlu000" }
 ]

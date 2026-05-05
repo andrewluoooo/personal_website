@@ -1,5 +1,10 @@
 colorScheme = "cherry"
 
-homepage.layout = "profile"
-homepage.showRecent = "true"
-enableSearch = "true"
+[homepage]
+layout = "profile"
+showRecent = false
+
+enableSearch = true
+
+[footer]
+showAppearanceSwitcher = false

@@ -59,5 +59,17 @@
     
   
     
+      <url>
+            <loc>http://localhost:1313/personal_website/publications/</loc>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/personal_website/resume/</loc>
+          </url>
+    
+  
+    
   
 </urlset>
