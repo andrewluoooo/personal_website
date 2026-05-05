@@ -8,7 +8,7 @@
 <h2>Timeline</h2>
 <div class="timeline-list">
 <article class="timeline-item">
-<span class="timeline-logo tl-gt-image" aria-hidden="true"><img class="timeline-logo-image" src="/personal_website/img/gt-logo.png" alt="" /></span>
+<span class="timeline-logo tl-gt-image" aria-hidden="true"><img class="timeline-logo-image" src="img/gt-logo.png" alt="" /></span>
 <div class="timeline-content">
 <p class="timeline-date">Aug 2026 - May 2028</p>
 <h3>Georgia Institute of Technology</h3>
@@ -16,7 +16,7 @@
 </div>
 </article>
 <article class="timeline-item">
-<span class="timeline-logo tl-cces-image" aria-hidden="true"><img class="timeline-logo-image" src="/personal_website/img/cces-logo.png" alt="" /></span>
+<span class="timeline-logo tl-cces-image" aria-hidden="true"><img class="timeline-logo-image" src="img/cces-logo.png" alt="" /></span>
 <div class="timeline-content">
 <p class="timeline-date">Jan 2026 - Present</p>
 <h3>Georgia Tech CCES Lab</h3>
@@ -24,7 +24,7 @@
 </div>
 </article>
 <article class="timeline-item">
-<span class="timeline-logo tl-gtri-image" aria-hidden="true"><img class="timeline-logo-image" src="/personal_website/img/gtri-logo.png" alt="" /></span>
+<span class="timeline-logo tl-gtri-image" aria-hidden="true"><img class="timeline-logo-image" src="img/gtri-logo.png" alt="" /></span>
 <div class="timeline-content">
 <p class="timeline-date">Aug 2025 - Present</p>
 <h3>Georgia Tech Research Institute (ELSYS)</h3>
@@ -32,7 +32,7 @@
 </div>
 </article>
 <article class="timeline-item">
-<span class="timeline-logo tl-sj-image" aria-hidden="true"><img class="timeline-logo-image" src="/personal_website/img/sj-logo.png" alt="" /></span>
+<span class="timeline-logo tl-sj-image" aria-hidden="true"><img class="timeline-logo-image" src="img/sj-logo.png" alt="" /></span>
 <div class="timeline-content">
 <p class="timeline-date">Jan 2025 - Present</p>
 <h3>SiliconJackets</h3>
@@ -40,7 +40,7 @@
 </div>
 </article>
 <article class="timeline-item">
-<span class="timeline-logo tl-gt-image" aria-hidden="true"><img class="timeline-logo-image" src="/personal_website/img/gt-logo.png" alt="" /></span>
+<span class="timeline-logo tl-gt-image" aria-hidden="true"><img class="timeline-logo-image" src="img/gt-logo.png" alt="" /></span>
 <div class="timeline-content">
 <p class="timeline-date">Aug 2022 - May 2026</p>
 <h3>Georgia Institute of Technology</h3>
