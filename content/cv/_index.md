@@ -1,10 +1,11 @@
 ---
-title: "Resume"
+title: "CV"
+description: "Open CV in a new tab"
 draft: false
 showdate: false
 showReadingTime: false
 aliases:
-  - /cv/
+  - /resume/
 ---
 
 <div style="height: 92vh;">
@@ -17,4 +18,4 @@ aliases:
   </iframe>
 </div>
 
-[Open resume in a new tab]({{< asset-url "resume/andrew-luo-resume-yay.pdf" >}})
+[Open CV in a new tab]({{< asset-url "resume/andrew-luo-resume-yay.pdf" >}})

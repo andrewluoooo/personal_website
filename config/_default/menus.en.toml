@@ -1,22 +1,22 @@
 [[main]]
-	name = "writings"
-	pageRef = "writings"
+	name = "publications"
+	pageRef = "publications"
 	weight = 20
 
 [[main]]
-	name = "projects"	
+	name = "projects"
 	pageRef = "projects"
 	weight = 30
 
 [[main]]
-	name = "resume"
-	pageRef = "resume"
+	name = "cv"
+	pageRef = "cv"
 	weight = 40
 
 [[main]]
-	name = "publications"
-	pageRef = "publications"
-	weight = 45
+	name = "writings"
+	pageRef = "writings"
+	weight = 50
 
 [[main]]
 	identifier = "appearance"
