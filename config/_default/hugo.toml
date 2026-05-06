@@ -3,6 +3,9 @@
 baseURL = "https://andluo.com/"
 languageCode = "en"
 
+# Include draft posts in listings and output (e.g. writings) when deploying.
+buildDrafts = true
+
 theme = "congo"
 
 [caches]
