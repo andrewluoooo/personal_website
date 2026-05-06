@@ -1,4 +1,6 @@
-baseURL = "https://andrewlu000/personal_website"
+# Must match the URL visitors use (canonical, RSS, Open Graph, sitemap).
+# Wrong host breaks production; see relativeURLs below for local/test servers.
+baseURL = "https://andluo.com/"
 languageCode = "en"
 
 theme = "congo"
