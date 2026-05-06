@@ -1,6 +1,6 @@
 <div class="home-intro">
 <p>Hello! I'm Andrew, a graduate student in computer engineering and researcher from Moorpark, California.</p>
-<p>My research interests span embedded systems, chip design, digital design/verification, and ML accelerators. I am passionate about building open utilities in these fields to help facilitate a freer and more open society.</p>
+<p>My research interests span embedded systems, chip design, EDA tools, digital design/verification, and ML accelerators. I am passionate about building open utilities in these fields to help facilitate a freer and more open society.</p>
 <p>Feel free to reach out to me at andrew.luo25@gmail.com.</p>
 </div>
 
