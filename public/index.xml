@@ -1,71 +1,75 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>andrew luo</title><link>https://andluo.com/</link><description>Recent content on andrew luo</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://andluo.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Routines</title><link>https://andluo.com/writings/routines/</link><pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate><guid>https://andluo.com/writings/routines/</guid><description>&lt;p&gt;Routines form the framework for life.&lt;/p&gt;
-&lt;p&gt;Frameworks are what elevate productivity.&lt;/p&gt;</description></item><item><title>Microsoft PowerToys is King</title><link>https://andluo.com/writings/powertoys/</link><pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate><guid>https://andluo.com/writings/powertoys/</guid><description>&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;extremely flexible and powerful&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PowerToys Run&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Mac Spotlight replacement.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PowerToys Workspaces&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;remapping shortcuts&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;if you don&amp;rsquo;t have media keys, you can do key combinations to do media control&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>Veganism, Vegetarianism, and Everything in Between</title><link>https://andluo.com/writings/vegan/</link><pubDate>Sat, 02 Aug 2025 02:39:50 +0000</pubDate><guid>https://andluo.com/writings/vegan/</guid><description>&lt;div class="lead !mb-9 text-xl"&gt;
- The most moral relationship between animals and humans is one that minimizes the human hand in animal suffering.
-&lt;/div&gt;
-
-&lt;p&gt;One of the greatest sources of inauthenticity in our modern American society (and western society for that matter) is our consumption of animals and animal products. We espouse our love for animals, as manifested through nearly &lt;a href="https://americanpetproducts.org/industry-trends-and-stats" target="_blank" rel="noreferrer"&gt;94 million American households&lt;/a&gt; that contain some sort of pet (that discussion is a whole can of worms in itself, with nearly &lt;a href="https://www.shelteranimalscount.org/animal-abuse-facts-and-statistics-2024/#:~:text=Animal%20abuse%20statistics%20and%20facts%20at%20a%20glance&amp;amp;text=An%20estimated%2010%20million%20animals,year%20in%20the%20United%20States.&amp;amp;text=About%20250%2C000%20animals%20annually%20are,most%20living%20in%20unsanitary%20conditions." target="_blank" rel="noreferrer"&gt;10 million animals&lt;/a&gt; dying from neglect or abuse each year in the United States) in 2025. We also know that humans are not singular in their capacity to feel pain, grief, loss, and sadness. Yet we consume slaughtered animals and animal products on a daily basis and are complicit to an industry that has little to no interest in the wellbeing of animals in general. We claim to care about animals, so why do we contribute so much to their suffering? There is so much cognitive dissonance between the American diet and conscience, and that begs the question: why live with so much hypocrisy?&lt;/p&gt;</description></item><item><title>The Centralization of Decentralized Services</title><link>https://andluo.com/writings/decentralized/</link><pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate><guid>https://andluo.com/writings/decentralized/</guid><description>&lt;p&gt;I was recently in a conversation with one of my friends&lt;/p&gt;
-&lt;p&gt;Spotify has thus far done the best job of centralization, aggregating a catalogue of high quality music -&amp;gt; features that can be tapped into an ecosystem as much as possible&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;music streaming needs a standard&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;just like why out IEEE standards are important&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;mastodon but for music streaming?&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;federated music streaming&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;things like FunkWhale&lt;/li&gt;
-&lt;li&gt;
-&lt;h2 id="also-not-enough-incentive-for-artists---where-is-streaming-revenue-going-to-come-from" class="relative group"&gt;also not enough incentive for artists -&amp;gt; where is streaming revenue going to come from? &lt;span class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100"&gt;&lt;a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700" style="text-decoration-line: none !important;" href="#also-not-enough-incentive-for-artists---where-is-streaming-revenue-going-to-come-from" aria-label="Anchor"&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;you use whatever servers -&amp;gt; artists choose the servers that they want to post on/are treating them the best -&amp;gt; users can just add the server and listen!&lt;/p&gt;</description></item><item><title>Behind the Curtains of Reverb</title><link>https://andluo.com/writings/reverb/</link><pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate><guid>https://andluo.com/writings/reverb/</guid><description>&lt;p&gt;Reverb is a priceless tool in sound synthesis and audio production, anchoring sounds within the space of a mix.&lt;/p&gt;</description></item><item><title>Making Music Creation Effortless</title><link>https://andluo.com/writings/creation/</link><pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate><guid>https://andluo.com/writings/creation/</guid><description>&lt;p&gt;Through my background in computer engineering, I have searched for ways to optimize my creative workflow with regards to sound design and&lt;/p&gt;
-&lt;p&gt;Starts with how your machine is configured, all the way to how your desk is layed out.&lt;/p&gt;
-&lt;p&gt;Utilizing Git for backing up versions of your using GitDaw&lt;/p&gt;</description></item><item><title>Sound Synthesis for the Free World</title><link>https://andluo.com/writings/sound_design/</link><pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate><guid>https://andluo.com/writings/sound_design/</guid><description>&lt;p&gt;The unfortunate reality for people who work with sound and in sound adjacent disciplines is that most of the full-featured &lt;a href="https://xferrecords.com/products/serum-2" target="_blank" rel="noreferrer"&gt;software&lt;/a&gt; and &lt;a href="https://www.sweetwater.com/store/detail/Sub37--moog-subsequent-37-analog-synthesizer?gQT=1" target="_blank" rel="noreferrer"&gt;hardware&lt;/a&gt; in this area is both absurdly costly for the budding individual creative and closed source for developers and hobby tinkerers.&lt;/p&gt;
-&lt;p&gt;
-
-
-
-
-
-
- 
- 
-&lt;figure&gt;&lt;img src="https://andluo.com/img/tf.jpg" alt="Absurd prices for plugins" class="mx-auto my-0 rounded-md" /&gt;&lt;figcaption class="text-center"&gt;Bonkers pricing for industry standard plugins. A trivial matter for industry giants but a big deal for those just starting out.&lt;/figcaption&gt;
-&lt;/figure&gt;
-
-This really sucks for several reasons:&lt;/p&gt;</description></item><item><title/><link>https://andluo.com/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andluo.com/about/</guid><description>&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-text" data-lang="text"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; `&amp;#39;::.
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; _________H ,%%&amp;amp;%,
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; /\ _ \%&amp;amp;&amp;amp;%%&amp;amp;%
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; / \___/^\___\%&amp;amp;%%&amp;amp;&amp;amp;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; | | [] [] |%\Y&amp;amp;%&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; | | .-. | || 
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;~~@._|@@_|||_@@|~||~~~~~~~~~~~~~
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; `&amp;#34;&amp;#34;&amp;#34;) )&amp;#34;&amp;#34;&amp;#34;`
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I am a graduate student in computer engineering and researcher.&lt;/p&gt;
-&lt;p&gt;My research interests span embedded systems, chip design, and digital design/verification. I am passionate about building open utilities in these fields to help facilitate more free and open society.&lt;/p&gt;
-&lt;p&gt;In my free time, I work on &lt;a href="https://www.patreon.com/c/crappysoundsmith" target="_blank" rel="noreferrer"&gt;sound design&lt;/a&gt; and &lt;a href="https://www.patreon.com/c/crappysoundsmith" target="_blank" rel="noreferrer"&gt;synthesizer design&lt;/a&gt; for the &lt;a href=""&gt;BRLD&lt;/a&gt; banner, in addition to &lt;a href=""&gt;writing music&lt;/a&gt;. I am also an avid fan of &lt;a href="https://www.faceit.com/en/players/alu0" target="_blank" rel="noreferrer"&gt;competitive CS2&lt;/a&gt;, swimming, and table tennis.&lt;/p&gt;</description></item><item><title>Unix As a Mindset</title><link>https://andluo.com/writings/unix_mindset/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://andluo.com/writings/unix_mindset/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>andrew luo</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on andrew luo</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Routines</title>
+      <link>http://localhost:1313/writings/routines/</link>
+      <pubDate>Wed, 06 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writings/routines/</guid>
+      <description>&lt;p&gt;Routines form the framework for life.&lt;/p&gt;&#xA;&lt;p&gt;Frameworks are what elevate productivity.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Microsoft PowerToys is King</title>
+      <link>http://localhost:1313/writings/powertoys/</link>
+      <pubDate>Tue, 05 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writings/powertoys/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;extremely flexible and powerful&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;PowerToys Run&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Mac Spotlight replacement.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;PowerToys Workspaces&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;remapping shortcuts&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;if you don&amp;rsquo;t have media keys, you can do key combinations to do media control&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Veganism, Vegetarianism, and Everything in Between</title>
+      <link>http://localhost:1313/writings/vegan/</link>
+      <pubDate>Sat, 02 Aug 2025 02:39:50 +0000</pubDate>
+      <guid>http://localhost:1313/writings/vegan/</guid>
+      <description>&lt;div class=&#34;lead !mb-9 text-xl&#34;&gt;&#xA;  The most moral relationship between animals and humans is one that minimizes the human hand in animal suffering.&#xA;&lt;/div&gt;&#xA;&#xA;&lt;p&gt;One of the greatest sources of inauthenticity in our modern American society (and western society for that matter) is our consumption of animals and animal products. We espouse our love for animals, as manifested through nearly &lt;a href=&#34;https://americanpetproducts.org/industry-trends-and-stats&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;94 million  American households&lt;/a&gt; that contain some sort of pet (that discussion is a whole can of worms in itself, with nearly &lt;a href=&#34;https://www.shelteranimalscount.org/animal-abuse-facts-and-statistics-2024/#:~:text=Animal%20abuse%20statistics%20and%20facts%20at%20a%20glance&amp;amp;text=An%20estimated%2010%20million%20animals,year%20in%20the%20United%20States.&amp;amp;text=About%20250%2C000%20animals%20annually%20are,most%20living%20in%20unsanitary%20conditions.&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;10 million animals&lt;/a&gt; dying from neglect or abuse each year in the United States) in 2025. We also know that humans are not singular in their capacity to feel pain, grief, loss, and sadness. Yet we consume slaughtered animals and animal products on a daily basis and are complicit to an industry that has little to no interest in the wellbeing of animals in general. We claim to care about animals, so why do we contribute so much to their suffering? There is so much cognitive dissonance between the American diet and conscience, and that begs the question: why live with so much hypocrisy?&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Centralization of Decentralized Services</title>
+      <link>http://localhost:1313/writings/decentralized/</link>
+      <pubDate>Tue, 29 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writings/decentralized/</guid>
+      <description>&lt;p&gt;I was recently in a conversation with one of my friends&lt;/p&gt;&#xA;&lt;p&gt;Spotify has thus far done the best job of centralization, aggregating a catalogue of high quality music -&amp;gt; features that can be tapped into an ecosystem as much as possible&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;music streaming needs a standard&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;just like why out IEEE standards are important&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;mastodon but for music streaming?&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;federated music streaming&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;things like FunkWhale&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;h2 id=&#34;also-not-enough-incentive-for-artists---where-is-streaming-revenue-going-to-come-from&#34; class=&#34;relative group&#34;&gt;also not enough incentive for artists -&amp;gt; where is streaming revenue going to come from? &lt;span class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100&#34;&gt;&lt;a class=&#34;group-hover:text-primary-300 dark:group-hover:text-neutral-700&#34; style=&#34;text-decoration-line: none !important;&#34; href=&#34;#also-not-enough-incentive-for-artists---where-is-streaming-revenue-going-to-come-from&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;&lt;/span&gt;&lt;/h2&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;you use whatever servers -&amp;gt; artists choose the servers that they want to post on/are treating them the best -&amp;gt; users can just add the server and listen!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Behind the Curtains of Reverb</title>
+      <link>http://localhost:1313/writings/reverb/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writings/reverb/</guid>
+      <description>&lt;p&gt;Reverb is a priceless tool in sound synthesis and audio production, anchoring sounds within the space of a mix.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Making Music Creation Effortless</title>
+      <link>http://localhost:1313/writings/creation/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writings/creation/</guid>
+      <description>&lt;p&gt;Through my background in computer engineering, I have searched for ways to optimize my creative workflow with regards to sound design and&lt;/p&gt;&#xA;&lt;p&gt;Starts with how your machine is configured, all the way to how your desk is layed out.&lt;/p&gt;&#xA;&lt;p&gt;Utilizing Git for backing up versions of your using GitDaw&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Sound Synthesis for the Free World</title>
+      <link>http://localhost:1313/writings/sound_design/</link>
+      <pubDate>Sun, 27 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writings/sound_design/</guid>
+      <description>&lt;p&gt;The unfortunate reality for people who work with sound and in sound adjacent disciplines is that most of the full-featured &lt;a href=&#34;https://xferrecords.com/products/serum-2&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;software&lt;/a&gt; and &lt;a href=&#34;https://www.sweetwater.com/store/detail/Sub37--moog-subsequent-37-analog-synthesizer?gQT=1&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;hardware&lt;/a&gt; in this area is both absurdly costly for the budding individual creative and closed source for developers and hobby tinkerers.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;  &#xA;  &#xA;&lt;figure&gt;&lt;img src=&#34;http://localhost:1313/img/tf.jpg&#34; alt=&#34;Absurd prices for plugins&#34; class=&#34;mx-auto my-0 rounded-md&#34; /&gt;&lt;figcaption class=&#34;text-center&#34;&gt;Bonkers pricing for industry standard plugins. A trivial matter for industry giants but a big deal for those just starting out.&lt;/figcaption&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;This really sucks for several reasons:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        `&amp;#39;::.&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    _________H ,%%&amp;amp;%,&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   /\     _   \%&amp;amp;&amp;amp;%%&amp;amp;%&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  /  \___/^\___\%&amp;amp;%%&amp;amp;&amp;amp;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |  | []   [] |%\Y&amp;amp;%&amp;#39;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  |  |   .-.   | ||  &#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;~~@._|@@_|||_@@|~||~~~~~~~~~~~~~&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     `&amp;#34;&amp;#34;&amp;#34;) )&amp;#34;&amp;#34;&amp;#34;`&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I am a graduate student in computer engineering and researcher.&lt;/p&gt;&#xA;&lt;p&gt;My research interests span embedded systems, chip design, and digital design/verification. I am passionate about building open utilities in these fields to help facilitate more free and open society.&lt;/p&gt;&#xA;&lt;p&gt;In my free time, I work on &lt;a href=&#34;https://www.patreon.com/c/crappysoundsmith&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;sound design&lt;/a&gt; and &lt;a href=&#34;https://www.patreon.com/c/crappysoundsmith&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;synthesizer design&lt;/a&gt; for the &lt;a href=&#34;&#34;&gt;BRLD&lt;/a&gt; banner, in addition to &lt;a href=&#34;&#34;&gt;writing music&lt;/a&gt;. I am also an avid fan of &lt;a href=&#34;https://www.faceit.com/en/players/alu0&#34; target=&#34;_blank&#34; rel=&#34;noreferrer&#34;&gt;competitive CS2&lt;/a&gt;, swimming, and table tennis.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Unix As a Mindset</title>
+      <link>http://localhost:1313/writings/unix_mindset/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/writings/unix_mindset/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

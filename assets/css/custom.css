@@ -5,6 +5,20 @@ html {
   font-size: 10pt;
 }
 
+/*
+ * Profile hero zoom: Congo ships a precompiled Tailwind bundle that omits
+ * arbitrary utilities (e.g. scale-[2.15]), so zoom must be plain CSS.
+ */
+.home-profile-avatar-zoom {
+	transform: scale(2.15);
+	transform-origin: center center;
+}
+
+.home-profile-avatar-zoom picture,
+.home-profile-avatar-zoom img {
+	object-position: 34% center;
+}
+
 details {
 	margin-left: 2em;
 }

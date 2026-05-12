@@ -13,9 +13,15 @@
   {{ with site.Language.Params.Author.image }}
     {{ $authorImage := resources.Get . }}
     {{ if $authorImage }}
-      {{ $imgClass := "mb-2 h-auto w-36 rounded-full" }}
+      {{ $imgClass := "h-36 w-36 object-cover" }}
       {{ $webp := $.Page.Site.Params.enableImageWebp | default true }}
-      {{ partial "picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass "lazy" $lazy "webp" $webp) }}
+      <div class="mb-2 h-36 w-36 shrink-0 overflow-hidden rounded-full">
+        <div class="flex h-full w-full items-center justify-center">
+          <div class="home-profile-avatar-zoom">
+            {{ partial "picture.html" (dict "img" $authorImage "alt" $altText "class" $imgClass "lazy" $lazy "webp" $webp) }}
+          </div>
+        </div>
+      </div>
     {{ end }}
   {{ end }}
   <h1 class="text-4xl font-extrabold">
