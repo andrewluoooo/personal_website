@@ -197,7 +197,7 @@ header button[id^="appearance-switcher-"] > span {
 	top: 0.25rem;
 	bottom: 0.25rem;
 	width: 2px;
-	background: linear-gradient(180deg, #94a3b8 0%, #cbd5e1 100%);
+	background: #9ca3af;
 	animation: timeline-line-in 900ms ease-out both;
 }
 
@@ -244,11 +244,27 @@ header button[id^="appearance-switcher-"] > span {
 	position: absolute;
 	left: -1.79rem;
 	top: 1rem;
-	width: 0.65rem;
-	height: 0.65rem;
+	width: 0.62rem;
+	height: 0.62rem;
 	border-radius: 9999px;
-	background: #475569;
-	box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.22);
+	background: #374151;
+	border: 1px solid rgba(255, 255, 255, 0.85);
+	box-shadow: none;
+}
+
+.timeline-item::after {
+	content: "";
+	position: absolute;
+	left: -1.17rem;
+	top: 1.29rem;
+	width: 0.45rem;
+	height: 0;
+	border-top: 2px solid #9ca3af;
+	border-left: none;
+	border-bottom: none;
+	border-bottom-left-radius: 0;
+	pointer-events: none;
+	background: none;
 }
 
 .timeline-date {
@@ -325,7 +341,7 @@ header button[id^="appearance-switcher-"] > span {
 }
 
 .dark .timeline-list::before {
-	background: linear-gradient(180deg, #475569 0%, #334155 100%);
+	background: #64748b;
 }
 
 .dark .timeline-item {
@@ -335,7 +351,12 @@ header button[id^="appearance-switcher-"] > span {
 
 .dark .timeline-item::before {
 	background: #cbd5e1;
-	box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.55);
+	border-color: rgba(15, 23, 42, 0.92);
+}
+
+.dark .timeline-item::after {
+	border-top-color: #64748b;
+	background: none;
 }
 
 .dark .timeline-date {
