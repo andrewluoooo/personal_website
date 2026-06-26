@@ -3,10 +3,10 @@ title = "andrew luo"
 [params.author]
 name = "andrew luo"
 image = "img/me.png"
-headline = "engineering & essays"
-bio = "engineering & essays"
 links = [
 	{ email = "andrew.luo25@gmail.com" },
 	{ linkedin = "https://www.linkedin.com/in/andluo/" },
-	{ github = "https://github.com/andrewluoooo" }
+	{ github = "https://github.com/andrewluoooo" },
+	{ substack = "https://substack.com/@andrewluo1" },
+	{ cv = "/resume/andrew-luo-resume-yay.pdf" }
 ]

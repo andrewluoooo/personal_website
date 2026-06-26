@@ -1,0 +1,11 @@
+<h1 class="text-4xl font-semibold tracking-tight text-neutral-900 dark:text-neutral">
+  {{ site.Language.Params.Author.name | default site.Title }}
+</h1>
+{{ with site.Language.Params.Author.headline }}
+  <h2 class="text-xl text-neutral-500 dark:text-neutral-400">
+    {{ . | markdownify | emojify }}
+  </h2>
+{{ end }}
+<div class="mt-1">
+  {{ partialCached "author-links.html" . }}
+</div>

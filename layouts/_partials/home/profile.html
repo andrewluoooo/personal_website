@@ -1,0 +1,20 @@
+<article
+  class="{{ if not .Site.Params.homepage.showRecent }}
+    h-full
+  {{ end }} home-profile-page"
+>
+  <div class="home-profile-columns">
+    <div class="home-profile-photo-col">
+      {{ partial "profile-photo.html" . }}
+    </div>
+    <div class="home-profile-text-col">
+      {{ partial "profile-details.html" (dict "align" "start") }}
+      {{ with .Content }}
+        <section class="prose dark:prose-invert home-profile-content">{{ . | emojify }}</section>
+      {{ end }}
+    </div>
+  </div>
+</article>
+<section>
+  {{ partial "recent-articles.html" . }}
+</section>

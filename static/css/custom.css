@@ -54,14 +54,7 @@ header button[id^="appearance-switcher-"] > span {
 
 .pub-page {
 	margin-top: 0.25rem;
-	font-family:
-		system-ui,
-		-apple-system,
-		"Segoe UI",
-		Roboto,
-		Helvetica,
-		Arial,
-		sans-serif;
+	font-family: "Crimson Text", serif;
 	color: #333333;
 	font-size: 1rem;
 	line-height: 1.45;

@@ -4,7 +4,6 @@
 
 
 
-
 <!doctype html>
 <html
   lang="en"
@@ -12,10 +11,10 @@
   class="scroll-smooth"
   data-default-appearance="light"
   data-auto-appearance="true"
-><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+><head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#FFFFFF" />
+  <meta name="theme-color" content="#FAF9F5" />
   
   <title>Notes &middot; andrew luo</title>
     <meta name="title" content="Notes &middot; andrew luo" />
@@ -42,8 +41,8 @@
   <link
     type="text/css"
     rel="stylesheet"
-    href="/css/main.bundle.min.558cd7ad3cca663e3ae53d17aa57f78245008d84a5c618ebad023818b3bf2ccc.css"
-    integrity="sha256-VYzXrTzKZj465T0Xqlf3gkUAjYSlxhjrrQI4GLO/LMw="
+    href="/css/main.bundle.min.7f42b1720583cef830885f31a5eb913b5751118e9a172a292256e9ca8a297f05.css"
+    integrity="sha256-f0KxcgWDzvgwiF8xpeuRO1dREY6aFyopIlbpyoopfwU="
   />
   
   
@@ -64,9 +63,9 @@
   
   
   
-    <link rel="canonical" href="http://localhost:1313/notes/" />
+    <link rel="canonical" href="https://andluo.com/notes/" />
   
-  <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/notes/index.xml" title="andrew luo" />
+  <link rel="alternate" type="application/rss+xml" href="https://andluo.com/notes/index.xml" title="andrew luo" />
   
   
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -80,20 +79,20 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/notes/">
-  <meta property="og:site_name" content="andrew luo">
-  <meta property="og:title" content="Notes">
-  <meta property="og:description" content="recently working on an Ubuntu virtual machine, trying to enable copying and pasting between the host and guest, was not playing well with Wayland
+  <meta property="og:url" content="https://andluo.com/notes/">
+	<meta property="og:site_name" content="andrew luo">
+	<meta property="og:title" content="Notes">
+	<meta property="og:description" content="recently working on an Ubuntu virtual machine, trying to enable copying and pasting between the host and guest, was not playing well with Wayland
 Thank you Doron: https://itsfoss.community/t/switching-from-wayland-to-x11-in-ubuntu-22-04/10723 sudo vim /etc/gdm3/custom.conf Uncomment #WaylandEnable=false systemctl restart gdm3 check if you are running X11 or Wayland
 loginctl, find your session loginctl show-session (#) -p Type manually installing packages on Ubuntu
 sudo dpkg -i (deb file)">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="website">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="website">
 
   
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Notes">
-  <meta name="twitter:description" content="recently working on an Ubuntu virtual machine, trying to enable copying and pasting between the host and guest, was not playing well with Wayland
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Notes">
+	<meta name="twitter:description" content="recently working on an Ubuntu virtual machine, trying to enable copying and pasting between the host and guest, was not playing well with Wayland
 Thank you Doron: https://itsfoss.community/t/switching-from-wayland-to-x11-in-ubuntu-22-04/10723 sudo vim /etc/gdm3/custom.conf Uncomment #WaylandEnable=false systemctl restart gdm3 check if you are running X11 or Wayland
 loginctl, find your session loginctl show-session (#) -p Type manually installing packages on Ubuntu
 sudo dpkg -i (deb file)">
@@ -113,6 +112,10 @@ sudo dpkg -i (deb file)">
     
       <link href="https://github.com/andrewluoooo" rel="me" />
     
+      <link href="https://substack.com/@andrewluo1" rel="me" />
+    
+      <link href="/resume/andrew-luo-resume-yay.pdf" rel="me" />
+    
   
   
   
@@ -125,12 +128,17 @@ sudo dpkg -i (deb file)">
 
   
   
+  
+  
+  
+  
+
 
   
   
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body
     class="m-auto flex h-screen max-w-7xl flex-col bg-neutral px-6 text-lg leading-7 text-neutral-900 dark:bg-neutral-800 dark:text-neutral sm:px-14 md:px-24 lg:px-32"
@@ -174,57 +182,6 @@ sudo dpkg -i (deb file)">
                   ><span
                       class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
                       >publications</span
-                    >
-                  </a
-                >
-              
-            </li>
-          
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/projects/"
-                  title="Projects"
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >projects</span
-                    >
-                  </a
-                >
-              
-            </li>
-          
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/cv/"
-                  title="CV"
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >cv</span
-                    >
-                  </a
-                >
-              
-            </li>
-          
-            
-            <li class="group mb-1 sm:mb-0 sm:me-7 sm:last:me-0.5">
-              
-                <a
-                  href="/writings/"
-                  title="Writings"
-                  
-                  
-                  ><span
-                      class="decoration-primary-500 group-hover:underline group-hover:decoration-2 group-hover:underline-offset-2"
-                      >writings</span
                     >
                   </a
                 >

@@ -1,4 +1,6 @@
-colorScheme = "cherry"
+colorScheme = "claude"
+defaultAppearance = "light"
+defaultThemeColor = "#FAF9F5"
 
 [homepage]
 layout = "profile"

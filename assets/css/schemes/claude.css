@@ -1,0 +1,40 @@
+/* Claude-inspired editorial palette — warm cream, terracotta accents */
+:root {
+  --color-neutral: 250, 249, 245;
+  /* Warm stone neutrals */
+  --color-neutral-50: 244, 243, 238;
+  --color-neutral-100: 237, 234, 227;
+  --color-neutral-200: 227, 221, 212;
+  --color-neutral-300: 212, 205, 194;
+  --color-neutral-400: 156, 148, 136;
+  --color-neutral-500: 122, 114, 104;
+  --color-neutral-600: 92, 86, 78;
+  --color-neutral-700: 74, 69, 62;
+  --color-neutral-800: 46, 42, 37;
+  --color-neutral-900: 31, 28, 24;
+  --color-neutral-950: 20, 18, 16;
+  /* Terracotta / amber accent */
+  --color-primary-50: 253, 244, 238;
+  --color-primary-100: 248, 230, 218;
+  --color-primary-200: 240, 204, 181;
+  --color-primary-300: 224, 165, 132;
+  --color-primary-400: 210, 130, 90;
+  --color-primary-500: 193, 100, 60;
+  --color-primary-600: 174, 86, 50;
+  --color-primary-700: 148, 72, 42;
+  --color-primary-800: 120, 58, 36;
+  --color-primary-900: 98, 48, 30;
+  --color-primary-950: 58, 28, 18;
+  /* Warm sand secondary */
+  --color-secondary-50: 250, 247, 240;
+  --color-secondary-100: 243, 236, 224;
+  --color-secondary-200: 232, 220, 200;
+  --color-secondary-300: 214, 196, 168;
+  --color-secondary-400: 194, 168, 132;
+  --color-secondary-500: 168, 140, 104;
+  --color-secondary-600: 140, 114, 82;
+  --color-secondary-700: 114, 92, 66;
+  --color-secondary-800: 92, 74, 54;
+  --color-secondary-900: 74, 60, 44;
+  --color-secondary-950: 42, 34, 24;
+}
