@@ -4,103 +4,83 @@
   
     
       <url>
-            <loc>https://andluo.com/</loc>
+            <loc>http://localhost:1313/</loc>
             <lastmod>2025-08-11T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/notes/</loc>
+            <loc>http://localhost:1313/notes/</loc>
             <lastmod>2025-08-11T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/routines/</loc>
+            <loc>http://localhost:1313/writings/routines/</loc>
             <lastmod>2025-08-06T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/</loc>
+            <loc>http://localhost:1313/writings/</loc>
             <lastmod>2025-08-06T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/powertoys/</loc>
+            <loc>http://localhost:1313/writings/powertoys/</loc>
             <lastmod>2025-08-05T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/vegan/</loc>
+            <loc>http://localhost:1313/writings/vegan/</loc>
             <lastmod>2025-08-02T02:39:50+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/decentralized/</loc>
+            <loc>http://localhost:1313/writings/decentralized/</loc>
             <lastmod>2025-07-29T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/reverb/</loc>
+            <loc>http://localhost:1313/writings/reverb/</loc>
             <lastmod>2025-07-28T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/creation/</loc>
+            <loc>http://localhost:1313/writings/creation/</loc>
             <lastmod>2025-07-28T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/writings/sound_design/</loc>
+            <loc>http://localhost:1313/writings/sound_design/</loc>
             <lastmod>2025-07-27T00:00:00+00:00</lastmod>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/about/</loc>
+            <loc>http://localhost:1313/about/</loc>
           </url>
     
   
     
       <url>
-            <loc>https://andluo.com/music/</loc>
-          </url>
-    
-  
-    
-  
-    
-      <url>
-            <loc>https://andluo.com/cv/</loc>
-          </url>
-    
-  
-    
-      <url>
-            <loc>https://andluo.com/projects/</loc>
-          </url>
-    
-  
-    
-      <url>
-            <loc>https://andluo.com/publications/</loc>
+            <loc>http://localhost:1313/music/</loc>
           </url>
     
   
@@ -108,7 +88,27 @@
   
     
       <url>
-            <loc>https://andluo.com/writings/unix_mindset/</loc>
+            <loc>http://localhost:1313/cv/</loc>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/projects/</loc>
+          </url>
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/publications/</loc>
+          </url>
+    
+  
+    
+  
+    
+      <url>
+            <loc>http://localhost:1313/writings/unix_mindset/</loc>
           </url>
     
   

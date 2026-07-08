@@ -258,7 +258,7 @@ header button[id^="appearance-switcher-"] > span {
 	margin-top: 1rem;
 	display: flex;
 	justify-content: center;
-	pointer-events: none;
+	pointer-events: auto;
 }
 
 .footer-ascii-art {
@@ -301,6 +301,18 @@ header button[id^="appearance-switcher-"] > span {
 .footer-ascii-art .smoke-0,
 .footer-ascii-art .smoke-4 {
 	animation-delay: 0.1s;
+}
+
+.footer-ascii-art .house-door-open {
+	display: none;
+}
+
+.footer-ascii-art:hover .house-door-closed {
+	display: none;
+}
+
+.footer-ascii-art:hover .house-door-open {
+	display: inline;
 }
 
 @keyframes chimney-smoke {

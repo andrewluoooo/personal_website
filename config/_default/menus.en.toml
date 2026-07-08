@@ -4,6 +4,11 @@
 	weight = 20
 
 [[main]]
+	name = "notes"
+	url = "https://notes.andluo.com/"
+	weight = 30
+
+[[main]]
 	identifier = "appearance"
 	weight = 98
 	[main.params]
