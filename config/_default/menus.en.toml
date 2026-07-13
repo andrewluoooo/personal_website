@@ -9,6 +9,11 @@
 	weight = 30
 
 [[main]]
+	name = "bookshelf"
+	url = "https://notes.andluo.com/readwise"
+	weight = 40
+
+[[main]]
 	identifier = "appearance"
 	weight = 98
 	[main.params]
