@@ -1,0 +1,33 @@
+{
+  "source": "notion-readwise-library",
+  "databaseId": "55c71ce9-e38c-8342-8bfb-816dc1c66604",
+  "syncedAt": "2026-07-29",
+  "dateField": "Document Tags (month/year tag)",
+  "filter": "Document Tags contains \"finished\"",
+  "books": [
+    {
+      "title": "The World's Worst Assistant",
+      "author": "Sona Movsesian",
+      "date": "2026-07-01",
+      "highlights": 29,
+      "cover": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/476626777/de5EupNeHbe2N73qaLW_RFrXe_yXGyLQz_duABM_oRY-cove_WKduosz.jpg",
+      "tags": ["finished", "july26"]
+    },
+    {
+      "title": "The Things We Never Say",
+      "author": "Elizabeth Strout",
+      "date": "2026-07-01",
+      "highlights": 183,
+      "cover": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/479614767/PB4nfSX30nk6BC459MmGN5ogvj4n0U_FdvuudlIwFMk-cover-cover.jpeg",
+      "tags": ["finished", "july26"]
+    },
+    {
+      "title": "Crying in H Mart",
+      "author": "Michelle Zauner",
+      "date": "2026-07-01",
+      "highlights": 233,
+      "cover": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/468509086/pDNXOLfZeseZEFUZbJojTCNQD_Evlwfvrq4C_fQsJUM-cove_EYupAMe.jpg",
+      "tags": ["finished", "july26"]
+    }
+  ]
+}

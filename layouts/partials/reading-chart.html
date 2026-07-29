@@ -1,0 +1,35 @@
+<section class="reading-section not-prose" aria-labelledby="reading-heading">
+  <div class="reading-header">
+    <h3 id="reading-heading">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"></path>
+      </svg>
+      Reading
+    </h3>
+    <a class="reading-bookshelf-link" href="https://notes.andluo.com/readwise">bookshelf →</a>
+  </div>
+
+  <div class="reading-chart">
+    <div class="chart-header">
+      <h4 class="chart-title">Reading Activity</h4>
+      <p class="reading-pace">
+        Current pace:
+        <span id="reading-book-count">—</span>
+        books finished in the past 365 days
+      </p>
+    </div>
+    <div class="chart-container">
+      <canvas id="readingChart" aria-label="Books finished per month from Readwise"></canvas>
+    </div>
+  </div>
+
+  <div id="books-list" class="books-list" aria-label="Books by month"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+  {{ $js := resources.Get "js/reading-chart.js" | resources.Minify | resources.Fingerprint }}
+  <script
+    src="{{ $js.RelPermalink }}"
+    integrity="{{ $js.Data.Integrity }}"
+    data-reading-url="{{ "data/reading.json" | relURL }}"
+  ></script>
+</section>
