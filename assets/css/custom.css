@@ -339,6 +339,30 @@ main:has(.home-profile-page) {
 	color: rgb(var(--color-neutral-500));
 }
 
+.reading-credit {
+	margin: 0.85rem 0 0;
+	font-size: 0.75rem;
+	color: rgb(var(--color-neutral-500));
+}
+
+.reading-credit a {
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	text-decoration-color: rgba(var(--color-neutral-400), 0.55);
+	transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.reading-credit a:hover {
+	color: rgb(var(--color-primary-600));
+	text-decoration-color: rgb(var(--color-primary-500));
+}
+
+.dark .reading-credit a:hover {
+	color: rgb(var(--color-primary-400));
+	text-decoration-color: rgb(var(--color-primary-400));
+}
+
 @media (max-width: 640px) {
 	.reading-section {
 		margin-top: 2rem;
