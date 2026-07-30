@@ -209,7 +209,17 @@
 
   async function boot() {
     const canvas = document.getElementById("readingChart");
-    if (!canvas || typeof Chart === "undefined") return;
+    if (!canvas) return;
+
+    // Congo's Chart.js may still be parsing; wait briefly before giving up.
+    if (typeof Chart === "undefined") {
+      await new Promise((resolve) => setTimeout(resolve, 50));
+      if (typeof Chart === "undefined") {
+        console.error("Chart.js failed to load");
+        showEmptyState("Unable to load reading chart library.");
+        return;
+      }
+    }
 
     let books = [];
     try {
@@ -244,23 +254,21 @@
 
     displayBooks(books);
 
+    // Rolling 12-month window (like Ethan's chart), extended earlier if needed.
     const monthlyData = {};
-    let earliestDate = null;
-    let latestDate = null;
+    const today = new Date();
+    const end = new Date(today.getFullYear(), today.getMonth(), 1);
+    let start = new Date(end.getFullYear(), end.getMonth() - 11, 1);
 
     books.forEach((book) => {
       const date = new Date(book.date + "T00:00:00");
-      if (!earliestDate || date < earliestDate) earliestDate = date;
-      if (!latestDate || date > latestDate) latestDate = date;
+      const bookMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+      if (bookMonth < start) start = bookMonth;
     });
 
-    if (!earliestDate || !latestDate) return;
-
-    const cursor = new Date(earliestDate.getFullYear(), earliestDate.getMonth(), 1);
-    const end = new Date(latestDate.getFullYear(), latestDate.getMonth(), 1);
+    const cursor = new Date(start.getFullYear(), start.getMonth(), 1);
     while (cursor <= end) {
-      const key = monthKeyFromDate(cursor);
-      monthlyData[key] = 0;
+      monthlyData[monthKeyFromDate(cursor)] = 0;
       cursor.setMonth(cursor.getMonth() + 1);
     }
 
