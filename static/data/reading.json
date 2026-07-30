@@ -1,7 +1,7 @@
 {
   "source": "notion-readwise-library",
   "databaseId": "55c71ce9-e38c-8342-8bfb-816dc1c66604",
-  "syncedAt": "2026-07-29",
+  "syncedAt": "2026-07-30",
   "dateField": "Document Tags (month/year tag)",
   "filter": "Document Tags contains \"finished\"",
   "books": [
@@ -11,6 +11,14 @@
       "date": "2026-07-01",
       "highlights": 29,
       "cover": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/476626777/de5EupNeHbe2N73qaLW_RFrXe_yXGyLQz_duABM_oRY-cove_WKduosz.jpg",
+      "tags": ["finished", "july26"]
+    },
+    {
+      "title": "A Life in Parts",
+      "author": "Cranston, Bryan",
+      "date": "2026-07-01",
+      "highlights": 224,
+      "cover": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/477141778/uyw0Br3V15je7cz9Kb9LEEEkT0-oylYuJ_Wta6oAzCM-x_m_WOb3Mvq.jpeg",
       "tags": ["finished", "july26"]
     },
     {
