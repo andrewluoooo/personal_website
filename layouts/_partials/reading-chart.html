@@ -1,4 +1,14 @@
-<section class="reading-section not-prose" aria-labelledby="reading-heading">
+{{ $algorithm := .Site.Params.fingerprintAlgorithm | default "sha256" }}
+{{ $raw := readFile "static/data/reading.json" }}
+{{ $reading := $raw | transform.Unmarshal }}
+{{ $books := $reading.books | default (slice) }}
+
+<section
+  class="reading-section not-prose"
+  id="reading-section"
+  aria-labelledby="reading-heading"
+  data-reading-url="{{ "data/reading.json" | relURL }}"
+>
   <div class="reading-header">
     <h3 id="reading-heading">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -14,7 +24,7 @@
       <h4 class="chart-title">Reading Activity</h4>
       <p class="reading-pace">
         Current pace:
-        <span id="reading-book-count">—</span>
+        <span id="reading-book-count">{{ len $books }}</span>
         books finished in the past 365 days
       </p>
     </div>
@@ -23,24 +33,86 @@
     </div>
   </div>
 
-  <div id="books-list" class="books-list" aria-label="Books by month"></div>
+  {{/* Server-render covers so they paint without waiting on Chart.js. */}}
+  <div id="books-list" class="books-list" aria-label="Books by month">
+    {{ if $books }}
+      {{ $byMonth := dict }}
+      {{ range $books }}
+        {{ $date := time.AsTime .date }}
+        {{ $key := printf "%04d-%02d" $date.Year $date.Month }}
+        {{ $existing := index $byMonth $key | default (slice) }}
+        {{ $byMonth = merge $byMonth (dict $key ($existing | append .)) }}
+      {{ end }}
+      {{ $monthKeys := slice }}
+      {{ range $books }}
+        {{ $date := time.AsTime .date }}
+        {{ $key := printf "%04d-%02d" $date.Year $date.Month }}
+        {{ if not (in $monthKeys $key) }}
+          {{ $monthKeys = $monthKeys | append $key }}
+        {{ end }}
+      {{ end }}
+      {{ $monthKeys = sort $monthKeys }}
+      <div class="books-carousel" id="booksCarousel">
+        <div class="carousel-content">
+          {{ range $monthKeys }}
+            {{ $key := . }}
+            {{ $labelDate := printf "%s-01" $key | time.AsTime }}
+            <div class="month-section" data-month="{{ $key }}">
+              <div class="month-header">{{ $labelDate.Format "Jan 06" }}</div>
+              <div class="month-books">
+                {{ range index $byMonth $key }}
+                  {{ $book := . }}
+                  <div
+                    class="book-card"
+                    title="{{ $book.title }}{{ with $book.author }} — {{ . }}{{ end }}"
+                  >
+                    <div class="book-cover">
+                      {{ with $book.cover }}
+                        <img
+                          class="book-img"
+                          src="{{ . }}"
+                          alt="{{ $book.title | default "Book" }}"
+                          loading="lazy"
+                          decoding="async"
+                          referrerpolicy="no-referrer"
+                        />
+                      {{ else }}
+                        <div class="book-cover-fallback" aria-hidden="true">
+                          {{ substr ($book.title | default "?") 0 1 }}
+                        </div>
+                      {{ end }}
+                    </div>
+                    <div class="book-title">{{ $book.title | default "Untitled" }}</div>
+                  </div>
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ else }}
+      <p class="reading-empty">
+        No finished books yet. Tag books “finished” plus a month/year tag (e.g. “Jul 26”) in Notion, then re-sync.
+      </p>
+    {{ end }}
+  </div>
 
   <p class="reading-credit">
     Reading chart inspired by
     <a href="https://ethanding.com/" target="_blank" rel="noopener noreferrer">Ethan Ding</a>
   </p>
 
-  {{/* Use Congo's vendored Chart.js so production does not depend on a CDN. */}}
-  {{ $algorithm := .Site.Params.fingerprintAlgorithm | default "sha256" }}
+  {{/* Congo's vendored Chart.js — deferred so book covers are not blocked. */}}
   {{ $chartLib := resources.Get "lib/chart/chart.umd.js" | resources.Fingerprint $algorithm }}
+  {{ $js := resources.Get "js/reading-chart.js" | resources.Minify | resources.Fingerprint $algorithm }}
   <script
+    defer
     src="{{ $chartLib.RelPermalink }}"
     integrity="{{ $chartLib.Data.Integrity }}"
   ></script>
-  {{ $js := resources.Get "js/reading-chart.js" | resources.Minify | resources.Fingerprint $algorithm }}
   <script
+    defer
     src="{{ $js.RelPermalink }}"
     integrity="{{ $js.Data.Integrity }}"
-    data-reading-url="{{ "data/reading.json" | relURL }}"
   ></script>
 </section>

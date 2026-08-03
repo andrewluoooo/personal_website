@@ -1,6 +1,8 @@
 (function () {
+  const sectionEl = document.getElementById("reading-section");
   const scriptEl = document.currentScript;
   const readingUrl =
+    (sectionEl && sectionEl.getAttribute("data-reading-url")) ||
     (scriptEl && scriptEl.getAttribute("data-reading-url")) ||
     "/data/reading.json";
 
@@ -207,54 +209,25 @@
     carousel.scrollLeft = monthPositions[monthKey];
   }
 
-  async function boot() {
-    const canvas = document.getElementById("readingChart");
-    if (!canvas) return;
+  function waitForChart(timeoutMs) {
+    if (typeof Chart !== "undefined") return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      const start = Date.now();
+      const timer = setInterval(() => {
+        if (typeof Chart !== "undefined") {
+          clearInterval(timer);
+          resolve();
+          return;
+        }
+        if (Date.now() - start > timeoutMs) {
+          clearInterval(timer);
+          reject(new Error("Chart.js failed to load"));
+        }
+      }, 40);
+    });
+  }
 
-    // Congo's Chart.js may still be parsing; wait briefly before giving up.
-    if (typeof Chart === "undefined") {
-      await new Promise((resolve) => setTimeout(resolve, 50));
-      if (typeof Chart === "undefined") {
-        console.error("Chart.js failed to load");
-        showEmptyState("Unable to load reading chart library.");
-        return;
-      }
-    }
-
-    let books = [];
-    try {
-      const response = await fetch(readingUrl);
-      if (!response.ok) throw new Error("Failed to fetch reading data");
-      const payload = await response.json();
-      books = normalizeBooks(payload.books);
-    } catch (err) {
-      console.error("Unable to load reading data", err);
-      showEmptyState("Unable to load reading data.");
-      return;
-    }
-
-    if (!books.length) {
-      showEmptyState(
-        'No finished books yet. Tag books “finished” plus a month/year tag (e.g. “Jul 26”) in Notion, then re-sync.'
-      );
-      return;
-    }
-
-    const countEl = document.getElementById("reading-book-count");
-    if (countEl) {
-      const today = new Date();
-      const oneYearAgo = new Date(today);
-      oneYearAgo.setDate(oneYearAgo.getDate() - 365);
-      const recent = books.filter((book) => {
-        const date = new Date(book.date + "T00:00:00");
-        return date >= oneYearAgo && date <= today;
-      });
-      countEl.textContent = String(recent.length);
-    }
-
-    displayBooks(books);
-
-    // Rolling 12-month window (like Ethan's chart), extended earlier if needed.
+  function buildMonthlySeries(books) {
     const monthlyData = {};
     const today = new Date();
     const end = new Date(today.getFullYear(), today.getMonth(), 1);
@@ -288,7 +261,24 @@
         { month: "short", year: "2-digit" }
       );
     });
-    const data = Object.values(monthlyData);
+    return { monthKeys, labels, data: Object.values(monthlyData) };
+  }
+
+  function renderPace(books) {
+    const countEl = document.getElementById("reading-book-count");
+    if (!countEl) return;
+    const today = new Date();
+    const oneYearAgo = new Date(today);
+    oneYearAgo.setDate(oneYearAgo.getDate() - 365);
+    const recent = books.filter((book) => {
+      const date = new Date(book.date + "T00:00:00");
+      return date >= oneYearAgo && date <= today;
+    });
+    countEl.textContent = String(recent.length);
+  }
+
+  function paintChart(canvas, books) {
+    const { monthKeys, labels, data } = buildMonthlySeries(books);
 
     const verticalLinePlugin = {
       id: "verticalLine",
@@ -410,11 +400,9 @@
 
     createChart();
 
-    window.addEventListener("load", () => {
-      document.querySelectorAll(".month-section").forEach((section) => {
-        const key = section.getAttribute("data-month");
-        monthPositions[key] = section.offsetLeft;
-      });
+    document.querySelectorAll(".month-section").forEach((section) => {
+      const key = section.getAttribute("data-month");
+      monthPositions[key] = section.offsetLeft;
     });
 
     const observer = new MutationObserver(() => createChart());
@@ -422,6 +410,44 @@
       attributes: true,
       attributeFilter: ["class"],
     });
+  }
+
+  async function boot() {
+    let books = [];
+    try {
+      const response = await fetch(readingUrl);
+      if (!response.ok) throw new Error("Failed to fetch reading data");
+      const payload = await response.json();
+      books = normalizeBooks(payload.books);
+    } catch (err) {
+      console.error("Unable to load reading data", err);
+      // Keep any server-rendered covers if JSON refresh fails.
+      if (!document.querySelector("#books-list .book-card")) {
+        showEmptyState("Unable to load reading data.");
+      }
+      return;
+    }
+
+    if (!books.length) {
+      showEmptyState(
+        'No finished books yet. Tag books “finished” plus a month/year tag (e.g. “Jul 26”) in Notion, then re-sync.'
+      );
+      return;
+    }
+
+    // Books + count first — independent of Congo Chart.js (~200KB).
+    renderPace(books);
+    displayBooks(books);
+
+    const canvas = document.getElementById("readingChart");
+    if (!canvas) return;
+
+    try {
+      await waitForChart(8000);
+      paintChart(canvas, books);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   boot();
