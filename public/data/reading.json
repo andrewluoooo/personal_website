@@ -1,7 +1,7 @@
 {
   "source": "notion-readwise-library",
   "databaseId": "55c71ce9-e38c-8342-8bfb-816dc1c66604",
-  "syncedAt": "2026-08-02",
+  "syncedAt": "2026-08-04",
   "dateField": "Document Tags (month/year tag)",
   "filter": "Document Tags contains \"finished\"",
   "books": [
@@ -43,6 +43,14 @@
       "date": "2026-08-01",
       "highlights": 312,
       "cover": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/481695184/MG2Lmwj97E7dLywfErfHhtUKQv4ahJPdjDZ4qBS-rmI-cover-cover.jpeg",
+      "tags": ["finished", "august26"]
+    },
+    {
+      "title": "Momofuku",
+      "author": "David Chang and Peter Meehan",
+      "date": "2026-08-01",
+      "highlights": 95,
+      "cover": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/483185196/PPF7Mv1YVGiLELzj1X7UNoLgoB4E30zvHHGsuRyqLKo-cove_u3pXyUC.jpg",
       "tags": ["finished", "august26"]
     }
   ]
