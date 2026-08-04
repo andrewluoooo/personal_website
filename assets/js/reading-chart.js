@@ -412,32 +412,67 @@
     });
   }
 
+  async function loadReadingPayload() {
+    const inline = document.getElementById("reading-data");
+    if (inline && inline.textContent.trim()) {
+      try {
+        let parsed = JSON.parse(inline.textContent);
+        // Hugo minify can leave the payload as a JSON-encoded string.
+        if (typeof parsed === "string") parsed = JSON.parse(parsed);
+        return parsed;
+      } catch (err) {
+        console.warn("Inline reading data invalid, falling back to fetch", err);
+      }
+    }
+
+    const response = await fetch(readingUrl, { cache: "no-store" });
+    if (!response.ok) throw new Error("Failed to fetch reading data");
+    return response.json();
+  }
+
+  function refreshMonthPositions() {
+    Object.keys(monthPositions).forEach((key) => delete monthPositions[key]);
+    document.querySelectorAll(".month-section").forEach((section) => {
+      const key = section.getAttribute("data-month");
+      monthPositions[key] = section.offsetLeft;
+    });
+  }
+
   async function boot() {
+    const serverCards = document.querySelectorAll("#books-list .book-card");
+    const hasServerBooks = serverCards.length > 0;
+
     let books = [];
     try {
-      const response = await fetch(readingUrl);
-      if (!response.ok) throw new Error("Failed to fetch reading data");
-      const payload = await response.json();
+      const payload = await loadReadingPayload();
       books = normalizeBooks(payload.books);
     } catch (err) {
       console.error("Unable to load reading data", err);
-      // Keep any server-rendered covers if JSON refresh fails.
-      if (!document.querySelector("#books-list .book-card")) {
+      if (!hasServerBooks) {
         showEmptyState("Unable to load reading data.");
+      } else {
+        refreshMonthPositions();
       }
       return;
     }
 
     if (!books.length) {
-      showEmptyState(
-        'No finished books yet. Tag books “finished” plus a month/year tag (e.g. “Jul 26”) in Notion, then re-sync.'
-      );
+      if (!hasServerBooks) {
+        showEmptyState(
+          'No finished books yet. Tag books “finished” plus a month/year tag (e.g. “Jul 26”) in Notion, then re-sync.'
+        );
+      }
       return;
     }
 
-    // Books + count first — independent of Congo Chart.js (~200KB).
     renderPace(books);
-    displayBooks(books);
+
+    // Keep Hugo SSR covers when present so a late client refresh cannot remove them.
+    if (!hasServerBooks) {
+      displayBooks(books);
+    } else {
+      refreshMonthPositions();
+    }
 
     const canvas = document.getElementById("readingChart");
     if (!canvas) return;

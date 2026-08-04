@@ -7,7 +7,8 @@
   class="reading-section not-prose"
   id="reading-section"
   aria-labelledby="reading-heading"
-  data-reading-url="{{ "data/reading.json" | relURL }}"
+  data-reading-url="{{ printf "%s?v=%s" ("data/reading.json" | relURL) ($reading.syncedAt | default "1") }}"
+  data-reading-synced="{{ $reading.syncedAt | default "" }}"
 >
   <div class="reading-header">
     <h3 id="reading-heading">
@@ -101,6 +102,9 @@
     Reading chart inspired by
     <a href="https://ethanding.com/" target="_blank" rel="noopener noreferrer">Ethan Ding</a>
   </p>
+
+  {{/* Inline payload matches SSR covers — avoids CDN-stale /data/reading.json races. */}}
+  <script type="application/json" id="reading-data">{{ $reading | jsonify | safeHTML }}</script>
 
   {{/* Congo's vendored Chart.js — deferred so book covers are not blocked. */}}
   {{ $chartLib := resources.Get "lib/chart/chart.umd.js" | resources.Fingerprint $algorithm }}
