@@ -1,0 +1,398 @@
+[
+  {
+    "id": "ae2b43f1b415",
+    "title": "A Low-Power Sparse Convolution Accelerator with Idle-First-Task-Assignment for Edge Vision",
+    "authors": [
+      "Jingyue Zhuge12,\nJohannes Partzsch1,\nChristian Mayr13"
+    ],
+    "venue": "",
+    "summary": "In recent years, edge-vision monitoring systems for applications such as smart animal husbandry have faced strict tripartite constraints: maintaining input resolution under extremely limited transmission bandwidth and strict power budgets. Conventional dense convolutional neural networks (CNNs) cannot satisfy the resou",
+    "url": "/papers/ae2b43f1b415/",
+    "addedAt": 1785640577.3498418,
+    "tags": []
+  },
+  {
+    "id": "9d411ebf064b",
+    "title": "A Systolic Array Architecture for Nonlinear Activation Functions and Softmax Computation using Chebyshev Polynomials",
+    "authors": [
+      "Benedikt Schaible1, Anirudh Suresh Bharadwaj2, Ulf Schlichtmann1 and Jiang Hu21"
+    ],
+    "venue": "",
+    "summary": "Neural Network Accelerators have gained popularity in recent years due to their greater efficiency than CPU-based platforms.\nOften, these accelerators utilize different hardware units for univariate activation functions, such as tanh, and the multivariate softmax, thereby missing opportunities for resource sharing betw",
+    "url": "/papers/9d411ebf064b/",
+    "addedAt": 1786063120.656659,
+    "tags": []
+  },
+  {
+    "id": "c0fcf48ad213",
+    "title": "Ares : Adaptive Reasoning-Effort Steering for PPA- and Cost-Aware RTL\nOptimization with LLM Agents",
+    "authors": [
+      "Stef Cuyckens",
+      "Mihaela Jivanescu",
+      "Jun Yin",
+      "Chao Fang \u2020",
+      "Marian Verhelst"
+    ],
+    "venue": "Asia and South Pacific Design Automation\nConference; January 2027; Tokyo, Japan",
+    "summary": "Large language model (LLM) agents optimize the power, performance, and area\n(PPA) of register-transfer-level (RTL) designs by iterating over edits, synthesis,\nand PPA analysis, paying a dollar cost for every LLM call. Prior agents report the quality reached without its normalized cost, attribute\nthat quality to an engi",
+    "url": "/papers/c0fcf48ad213/",
+    "addedAt": 1785621537.005345,
+    "tags": []
+  },
+  {
+    "id": "ce86baa6c07b",
+    "title": "At-the-Roofline Sparse Tensor Contractions on Vector Processors for Transformer Inference",
+    "authors": [
+      "Bowen Wang * ,\nChi Zhang * ,\nDiyou Shen * ,\nRenzo Andri \u2021 ,\nNavaneeth Kunhi Purayil * ,\nLuca Benini *\u2020"
+    ],
+    "venue": "",
+    "summary": "Fine-grained weight pruning and activation sparsification have emerged as effective approaches for reducing the compute and memory cost of inference for Transformer models. In the moderate-sparsity regime, Gustavson\u2019s dataflow provides a natural execution model for exploiting both activation and weight sparsity on vect",
+    "url": "/papers/ce86baa6c07b/",
+    "addedAt": 1785647738.520472,
+    "tags": []
+  },
+  {
+    "id": "1a582b339f07",
+    "title": "Beyond Prefill-Decode Disaggregation: Dissecting LLM Inference for Heterogeneous Platforms via Dynamic Operator Scheduling",
+    "authors": [
+      "Jiaqi Yang",
+      "Jiayi Li",
+      "Yihan Fu",
+      "Hongxiao Zhao",
+      "Zhan Chen",
+      "Qiuping Wu",
+      "Yuchao Yang",
+      "Bonan Yan"
+    ],
+    "venue": "",
+    "summary": "Prefill \u2013 decode disaggregation ( PD ) and roofline-based operator placement are common strategies for partitioning Large Language Model (LLM) inference across heterogeneous systems, but they are often insufficient in practice. End-to-end latency also depends on workload shape, runtime device contention, and persistent",
+    "url": "/papers/1a582b339f07/",
+    "addedAt": 1785687450.742883,
+    "tags": []
+  },
+  {
+    "id": "bf8ff4dfc06e",
+    "title": "CircuitProver: Agentic Lean\u00a04 Theorem Proving with Reusable Circuit Proof Library for Hardware Verification",
+    "authors": [
+      "Written by AAAI Press Staff 1 AAAI Style Contributions by Peter Patel Schneider,\nSunil Issar, J. Scott Penberthy,\nGeorge Ferguson,\nHans Guesgen,\nFrancisco Cruz ,\nMarc Pujol-Gonzalez",
+      "Ziyi Yang 1 ,\nWenji Fang 2 ,\nChen Chen 1 ,\nZhiyao Xie 2 ,\nHongce Zhang 1,2"
+    ],
+    "venue": "",
+    "summary": "Modern integrated circuits (ICs) are becoming increasingly complex,\nmaking functional verification a major bottleneck.\nThe dominant hardware formal verification methodology, model checking, verifies each design instance separately and exposes only pass/fail results, so the reasoning behind a proof stays locked inside s",
+    "url": "/papers/bf8ff4dfc06e/",
+    "addedAt": 1785645983.808866,
+    "tags": []
+  },
+  {
+    "id": "55e1c0bf7dc6",
+    "title": "Demystifying DRAM Read Disturbance: Bridging the Gap Between Experimental Characterization and Device-Level Modeling of RowHammer and RowPress Phenomena",
+    "authors": [
+      "Haocong Luo 1 Longda Zhou 2 1 1 footnotemark: 1 Ataberk Olgun 1 \u0130smail\u00a0Emir\u00a0Y\u00fcksel 1 Nisa Bostanci 1 Zhigang Ji 3 Xing Wu 2 Onur Mutlu 1 1 ETH Zurich 2 East China Normal University 3 Shanghai Jiao Tong University"
+    ],
+    "venue": "",
+    "summary": "DRAM read disturbance, like RowHammer and RowPress, is a critical robustness issue where accessing DRAM can cause unintended bitflips in other unaccessed DRAM locations. DRAM read disturbance bitflips significantly impact the safe, secure, and reliable operation of DRAM-based computing systems. Many prior works extensi",
+    "url": "/papers/55e1c0bf7dc6/",
+    "addedAt": 1785631797.739757,
+    "tags": []
+  },
+  {
+    "id": "26fc4fdec069",
+    "title": "DGNN-Booster: A Generic FPGA Accelerator Framework For Dynamic Graph Neural Network Inference",
+    "authors": [],
+    "venue": "",
+    "summary": "",
+    "url": "/papers/26fc4fdec069/",
+    "addedAt": 1785623976.123878,
+    "tags": []
+  },
+  {
+    "id": "9bffde5eb9cf",
+    "title": "DICE : D etailed I nter- C hiplet E nd-to-End PHY Modeling for Accurate Chiplet Simulation",
+    "authors": [
+      "ISCA 2026 Submission # \u2013 Confidential Draft \u2013 Do NOT Distribute",
+      "Rashid Aligholipour",
+      "Stefanos Kaxiras",
+      "Yuan Yao"
+    ],
+    "venue": "",
+    "summary": "Scaling monolithic multicores is increasingly constrained by power/thermal limits, yield, and rising manufacturing and testing costs. Chiplet designs address these challenges by partitioning large dies into smaller parts (typically multiple core-complex dies and an I/O die) linked via high-bandwidth physical fabrics (",
+    "url": "/papers/9bffde5eb9cf/",
+    "addedAt": 1785691822.7447639,
+    "tags": []
+  },
+  {
+    "id": "48d2c5af78ce",
+    "title": "Escaping Flatland: A Placement Flow for Enabling 3D FPGAs",
+    "authors": [
+      "Cong Hao",
+      "Andrew B. Kahng",
+      "Bodhisatta Pramanik",
+      "Ismael Youssef"
+    ],
+    "venue": "63rd ACM/IEEE Design Automation Conference; July 26\u201329, 2026; Long Beach, CA, USA",
+    "summary": "3D field-programmable gate arrays (FPGAs) promise higher performance through\nvertical integration. However, existing placement tools, largely inherited from 2D frameworks, fail to capture the unique delay characteristics and optimization dynamics of 3D\nfabrics. We introduce a 3D FPGA placement flow that integrates part",
+    "url": "/papers/48d2c5af78ce/",
+    "addedAt": 1786053551.915263,
+    "tags": []
+  },
+  {
+    "id": "b39ea111a482",
+    "title": "Exploring and Exploiting Runtime Reconfigurable Floating Point Precision in Scientific Computing: a Case Study for Solving PDEs",
+    "authors": [
+      "Cong Hao, Georgia Institute of Technology, callie.hao@ece.gatech.edu"
+    ],
+    "venue": "",
+    "summary": "Scientific computing applications, such as computational fluid dynamics and climate modeling, typically rely on 64-bit double-precision floating-point operations, which are extremely costly in terms of computation, memory, and energy. While the machine learning community has successfully utilized low-precision computat",
+    "url": "/papers/b39ea111a482/",
+    "addedAt": 1785594445.680843,
+    "tags": []
+  },
+  {
+    "id": "6eacada92324",
+    "title": "Fast Iterative Dual-Output-Aware LUT Mapping for Fracturable FPGA Architectures",
+    "authors": [
+      "Sheng Lu, Department of Electrical Engineering, The University of Texas at Arlington"
+    ],
+    "venue": "",
+    "summary": "Modern field-programmable gate arrays employ fracturable lookup tables (LUTs), each of which can implement either a single large-input function or two smaller functions within a shared physical LUT site. Conventional technology-mapping flows typically perform dual-output packing only after single-output LUT mapping, th",
+    "url": "/papers/6eacada92324/",
+    "addedAt": 1785711150.786738,
+    "tags": []
+  },
+  {
+    "id": "c9af6aee2597",
+    "title": "FlowGNN: A Dataflow Architecture for Real-Time Workload-Agnostic Graph Neural Network Inference",
+    "authors": [
+      "Rishov Sarkar, Stefan Abi-Karam, Yuqi He, Lakshmi Sathidevi, Cong Hao School of Electrical and Computer Engineering, Georgia Institute of Technology { rishov.sarkar , stefanabikaram , yhe374 , lsathidevi3 , callie.hao } @gatech.edu"
+    ],
+    "venue": "",
+    "summary": "Graph neural networks (GNNs) have recently exploded in popularity thanks to their broad applicability to graph-related problems such as quantum chemistry, drug discovery, and high energy physics.\nHowever, meeting demand for novel GNN models and fast inference simultaneously is challenging due to the gap between develop",
+    "url": "/papers/c9af6aee2597/",
+    "addedAt": 1785543816.494168,
+    "tags": []
+  },
+  {
+    "id": "5b2427f3605a",
+    "title": "ForgeBench: A Machine Learning Benchmark Suite and Auto-Generation Framework for Next-Generation HLS Tools",
+    "authors": [
+      "Andy Wanna 1\u2217 , Hanqiu Chen 1\u2217 , Cong (Callie) Hao 1"
+    ],
+    "venue": "",
+    "summary": "Although High-Level Synthesis (HLS) has attracted considerable interest in hardware design, it has not yet become mainstream due to two primary challenges. First, current HLS hardware design benchmarks are outdated as they do not cover modern machine learning (ML) applications, preventing the rigorous development of HL",
+    "url": "/papers/5b2427f3605a/",
+    "addedAt": 1785594396.355446,
+    "tags": []
+  },
+  {
+    "id": "78743ab0a6d3",
+    "title": "Fuzzy Hardware Tool: An Adaptable Tool to Facilitate the Implementation of Fuzzy Inference Systems in Hardware",
+    "authors": [
+      "Valdez, Rogelio",
+      "Maldonado, Yazmin",
+      "Quevedo, Joel A."
+    ],
+    "venue": "MDPI",
+    "summary": "Valdez, R.; Maldonado, Y.; Quevedo, J.A. \n Fuzzy Hardware Tool: An Adaptable Tool to Facilitate the Implementation of Fuzzy Inference Systems in Hardware. Electronics 2023 , 12 , 2853.\n https://doi.org/10.3390/electronics12132853 Valdez R, Maldonado Y, Quevedo JA. \n Fuzzy Hardware Tool: An Adaptable Tool to Facilitate",
+    "url": "/papers/78743ab0a6d3/",
+    "addedAt": 1786066108.027276,
+    "tags": []
+  },
+  {
+    "id": "6db50883d198",
+    "title": "Fuzzy logic approach for controlling uncertain and nonlinear systems: a comprehensive review of applications and advances",
+    "authors": [
+      "Hooi Hung Tang",
+      "Nur Syazreen Ahmad"
+    ],
+    "venue": "",
+    "summary": "",
+    "url": "/papers/6db50883d198/",
+    "addedAt": 1786066988.1793358,
+    "tags": []
+  },
+  {
+    "id": "a212191c1f7e",
+    "title": "GPT-4 Technical Report",
+    "authors": [
+      "OpenAI"
+    ],
+    "venue": "",
+    "summary": "We report the development of GPT-4, a large-scale, multimodal model which can accept image and text inputs and produce text outputs. While less capable than humans in many real-world scenarios, GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam",
+    "url": "/papers/a212191c1f7e/",
+    "addedAt": 1785538444.840853,
+    "tags": []
+  },
+  {
+    "id": "5dd0e969ba58",
+    "title": "Hardware Design and Security in the Era of Chiplets and LLMs",
+    "authors": [
+      "Johann Knechtel",
+      "Ozgur Sinanoglu",
+      "Paul V. Gratz",
+      "Ramesh Karri"
+    ],
+    "venue": "",
+    "summary": "The semiconductor industry is undergoing a dual revolution: the shift toward\nheterogeneous 2.5D chiplet systems and the integration of Large Language\nModels (LLMs) into Electronic Design Automation (EDA) flows. While these\nparadigms offer unprecedented benefits in yield, modularity, design\nproductivity, etc., they radi",
+    "url": "/papers/5dd0e969ba58/",
+    "addedAt": 1786064889.7953842,
+    "tags": []
+  },
+  {
+    "id": "cd92917fba6d",
+    "title": "Hardware-Enabled Fuzzy Inference: Architectures, Platforms, and Emerging Trends",
+    "authors": [
+      "Amir Hossein Jalilvand 0000-0002-7641-6606,\nParsa Hassani Shariat Panahi 0009-0005-2912-3754,\nand M. Hassan Najafi 0000-0002-4655-6229"
+    ],
+    "venue": "",
+    "summary": "Fuzzy logic systems are widely used for intelligent decision-making under uncertainty, offering interpretability and robustness across diverse applications. However, the growing demand for real-time edge intelligence has exposed the limitations of software-based fuzzy inference: unpredictable latency, excessive power c",
+    "url": "/papers/cd92917fba6d/",
+    "addedAt": 1786064977.753896,
+    "tags": []
+  },
+  {
+    "id": "df8a5ff4e75b",
+    "title": "HiKV: Hierarchical Importance-Aware KV Cache with Hardware Acceleration for LLM Decoding",
+    "authors": [
+      "Chao\u00a0Fang,\u00a0\nJun\u00a0Yin,\nMan\u00a0Shi,\nand\u00a0Marian\u00a0Verhelst"
+    ],
+    "venue": "",
+    "summary": "With the rapid adoption of long-context large language models (LLMs), the continuously growing KV cache during decoding has become the critical memory bottleneck. To tackle this challenge, we propose HiKV, a novel algorithm-hardware co-design that exploits KV cache redundancy through hierarchical importance awareness.",
+    "url": "/papers/df8a5ff4e75b/",
+    "addedAt": 1785711446.7954628,
+    "tags": []
+  },
+  {
+    "id": "e252e704aa54",
+    "title": "HLSFactory: A Framework Empowering High-Level Synthesis Datasets for Machine Learning and Beyond",
+    "authors": [
+      "Stefan Abi-Karam 1,2 ,\nRishov Sarkar 1 ,\nAllison Seigler 3 ,\nSean Lowe 4 ,\nZhigang Wei 3 ,\nHanqiu Chen 1 , Nanditha Rao 5 ,\nLizy John 3 ,\nAman Arora 4 ,\nCong Hao 1"
+    ],
+    "venue": "2024 ACM/IEEE International Symposium on\nMachine Learning for CAD; September 9\u201311, 2024; Salt Lake City, UT, USA",
+    "summary": "Machine learning (ML) techniques have been applied to high-level synthesis (HLS) flows for quality-of-result (QoR) prediction and design space exploration (DSE). Nevertheless, the scarcity of accessible high-quality HLS datasets and the complexity of building such datasets present great challenges to FPGA and ML resear",
+    "url": "/papers/e252e704aa54/",
+    "addedAt": 1785534454.1194901,
+    "tags": []
+  },
+  {
+    "id": "f8729a022a6e",
+    "title": "LightningSim: Fast and Accurate Trace-Based Simulation for High-Level Synthesis",
+    "authors": [
+      "Rishov Sarkar, Cong Hao"
+    ],
+    "venue": "",
+    "summary": "High-Level Synthesis allows hardware designers to create complex RTL designs using C/C++. The traditional HLS workflow involves iterations of C/C++ simulation for partial functional verification and HLS synthesis for coarse timing estimates. However, neither C/C++ simulation nor HLS synthesis estimates can account for",
+    "url": "/papers/f8729a022a6e/",
+    "addedAt": 1785537510.275824,
+    "tags": []
+  },
+  {
+    "id": "781b9f8fe86d",
+    "title": "LightningSimV2: Faster and Scalable Simulation for High-Level Synthesis via Graph Compilation and Optimization",
+    "authors": [
+      "Rishov Sarkar, Rachel Paul, Cong (Callie) Hao"
+    ],
+    "venue": "",
+    "summary": "High-Level Synthesis (HLS) enables rapid prototyping of complex hardware designs by translating C or C++ code to low-level RTL code. However, the testing and evaluation of HLS designs still typically rely on slow RTL-level simulators that can take hours to provide feedback, especially for complex designs. A recent work",
+    "url": "/papers/781b9f8fe86d/",
+    "addedAt": 1785537524.9241679,
+    "tags": []
+  },
+  {
+    "id": "c05beea77d2d",
+    "title": "LLM-Assisted Detection and Repair of Hardware Security Vulnerabilities in Verilog Designs",
+    "authors": [
+      "Ethen Santana Department of Computer Science Iowa State University Ames, IA, USA esantana@iastate.edu",
+      "John Doe Department of Electrical Engineering University of Iowa Iowa City, IA, USA jdoe@uiowa.edu"
+    ],
+    "venue": "",
+    "summary": "Hardware designs, like software, are susceptible to bugs that can introduce security vulnerabilities and create opportunities for malicious exploitation. Unlike software vulnerabilities, however, hardware flaws become permanently embedded in silicon after fabrication, making them difficult or impossible to patch. Many",
+    "url": "/papers/c05beea77d2d/",
+    "addedAt": 1786064852.337909,
+    "tags": []
+  },
+  {
+    "id": "47825d18991b",
+    "title": "OmniSim: Simulating Hardware with C Speed and RTL Accuracy for High-Level Synthesis Designs",
+    "authors": [
+      "Rishov Sarkar",
+      "Cong Hao"
+    ],
+    "venue": "58th IEEE/ACM International Symposium on Microarchitecture; October 18\u201322, 2025; Seoul, Republic of Korea",
+    "summary": "High-Level Synthesis (HLS) is increasingly popular for hardware design using C/C++ instead of Register-Transfer Level (RTL). To express concurrent hardware behavior in a sequential language like C/C++, HLS tools introduce constructs such as infinite loops and dataflow modules connected by FIFOs (first-in first-out). Wh",
+    "url": "/papers/47825d18991b/",
+    "addedAt": 1785537360.835266,
+    "tags": []
+  },
+  {
+    "id": "4bbd91160462",
+    "title": "On Design Principles for Efficient Heterogeneous DRAM-PIM-GPU Systems",
+    "authors": [
+      "Corey Lammie 0000-0001-5564-135612, Hadjer Benmeziane 0000-0002-5259-07491, William Andrew Simon 0000-0001-7357-72041, Irem Boybat 0000-0002-4255-86221"
+    ],
+    "venue": "",
+    "summary": "Heterogeneous DRAM-based processing-in-memory (PIM)-GPU systems promise significant efficiency gains for decode-phase large language model (LLM) inference, particularly in long-output generation, yet current design practices overlook critical factors that determine real-world performance. Through systematic evaluation",
+    "url": "/papers/4bbd91160462/",
+    "addedAt": 1786071376.5559416,
+    "tags": []
+  },
+  {
+    "id": "92422f81c50a",
+    "title": "Optimizing Transformer Neural Network for Real-Time Outlier Detection on FPGAs",
+    "authors": [
+      "Ilia Sobakinskikh and Paul Alexander Bilokon"
+    ],
+    "venue": "",
+    "summary": "In this work, we explore how the inference time of a Transformer Neural Network can be efficiently optimized with applications to real-time anomaly detection in financial time series.\nThe financial time series are price series such as asset prices.\nUnfortunately, the data is often with errors or outliers that make the",
+    "url": "/papers/92422f81c50a/",
+    "addedAt": 1785712128.548741,
+    "tags": []
+  },
+  {
+    "id": "3b5a2086a102",
+    "title": "PIMID: A Full-System Simulator with Intricacy and Diversity for Processing-in-Memory",
+    "authors": [
+      "Yuan He, Masaaki Kondo, Galen M. Shipman, Jered B. Dominguez-Trujillo, Shigeki Tomishima, and Kazi Asifuzzaman"
+    ],
+    "venue": "",
+    "summary": "Processing-in-Memory\u00a0(PIM) addresses the memory wall by co-locating computation with memory, but because real PIM hardware remains scarce, simulation is the primary way to explore the PIM design space. Yet existing PIM simulators each cover only part of that space: they typically model a single memory technology, fix p",
+    "url": "/papers/3b5a2086a102/",
+    "addedAt": 1785692184.012514,
+    "tags": []
+  },
+  {
+    "id": "983884cad871",
+    "title": "Playing Atari with Deep Reinforcement Learning",
+    "authors": [
+      "Volodymyr Mnih \u00a0\u00a0\u00a0\nKoray Kavukcuoglu \u00a0\u00a0\u00a0\nDavid Silver \u00a0\u00a0\u00a0\nAlex Graves \u00a0\u00a0\u00a0\nIoannis Antonoglou Daan Wierstra \u00a0\u00a0\u00a0\nMartin Riedmiller DeepMind Technologies {vlad,koray,david,alex.graves,ioannis,daan,martin.riedmiller} @ deepmind.com"
+    ],
+    "venue": "",
+    "summary": "We present the first deep learning model to successfully learn control policies directly from high-dimensional sensory input using reinforcement learning.\nThe model is a convolutional neural network, trained with a variant of Q-learning, whose input is raw pixels and whose output is a value function estimating future r",
+    "url": "/papers/983884cad871/",
+    "addedAt": 1785518585.3437068,
+    "tags": []
+  },
+  {
+    "id": "15e007a9b596",
+    "title": "RealProbe: An Automated and Lightweight Performance Profiler for In-FPGA Execution of High-Level Synthesis Designs",
+    "authors": [
+      "Jiho Kim, Cong Hao School of Electrical and Computer Engineering, Georgia Institute of Technology jiho.kim@gatech.edu, callie.hao@ece.gatech.edu"
+    ],
+    "venue": "",
+    "summary": "High-level synthesis (HLS) accelerates FPGA design by rapidly generating diverse implementations using optimization directives.\nHowever, even with cycle-accurate C/RTL co-simulation, the reported clock cycles often differ significantly from actual FPGA performance. This discrepancy hampers accurate bottleneck identific",
+    "url": "/papers/15e007a9b596/",
+    "addedAt": 1785592756.770336,
+    "tags": []
+  },
+  {
+    "id": "9757276c24a3",
+    "title": "Residual-INR: Communication Efficient On-Device Learning Using Implicit Neural Representation",
+    "authors": [
+      "Hanqiu Chen 1 , Xuebin Yao 2 , Pradeep Subedi 2 and Cong Hao 1 1 Georgia Institute of Technology and 2 Samsung Semiconductor, Inc. {hanqiu.chen, callie.hao}@gatech.edu, {xuebin.yao, prad.subedi}@samsung.com"
+    ],
+    "venue": "IEEE/ACM International Conference on Computer-Aided Design; October 27\u201331, 2024; New York, NY, USA",
+    "summary": "Edge computing is a distributed computing paradigm that collects and processes data at or near the source of data generation. The on-device learning at edge relies on device-to-device wireless communication to facilitate real-time data sharing and collaborative decision-making among multiple devices. This significantly",
+    "url": "/papers/9757276c24a3/",
+    "addedAt": 1785611393.6585228,
+    "tags": []
+  }
+]
