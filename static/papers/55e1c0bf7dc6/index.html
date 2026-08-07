@@ -3320,6 +3320,20 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
       authorHasAvatar: !!p.hasAvatar
     };
   }
+  function highlightAuthorName(h) {
+    return (h && h.authorName ? String(h.authorName) : "").trim();
+  }
+  // A highlight belongs to the signed-in profile when authorName matches
+  // the current display name. Empty authorName is only treated as "mine"
+  // for the anonymous "You" profile (legacy unmarked highlights); a named
+  // account cannot delete unsigned highlights — safer "can't delete others".
+  function isOwnHighlight(h) {
+    if (!h) return false;
+    var mine = currentAuthorProfile().authorName;
+    var theirs = highlightAuthorName(h);
+    if (!theirs) return mine === "You";
+    return theirs === mine;
+  }
   function refreshAuthorProfile() {
     return fetch("/api/account", { credentials: "same-origin" })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -3373,6 +3387,9 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
     var changed = false;
     list.forEach(function (h) {
       if (!h || typeof h !== "object") return;
+      // Never rewrite another author's highlights — ownership depends on
+      // the stamped authorName surviving across sessions.
+      if (!isOwnHighlight(h)) return;
       if (h.authorName !== author.authorName || !!h.authorHasAvatar !== author.authorHasAvatar) {
         h.authorName = author.authorName;
         h.authorHasAvatar = author.authorHasAvatar;
@@ -3954,9 +3971,14 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
     return null;
   }
   function removeHighlightById(id) {
+    var h = findHighlight(id);
+    if (h && !isOwnHighlight(h)) return false;
     removeHighlightVisual(id);
-    saveHighlights(loadHighlights().filter(function (h) { return h.id !== id; }));
+    saveHighlights(loadHighlights().filter(function (x) { return x.id !== id; }));
+    if (activeMarkId === id) activeMarkId = null;
     renderHighlightsList();
+    updateHighlightAuthorLabels();
+    return true;
   }
   function restoreHighlights() {
     ensureColorHighlightBuckets();
@@ -4071,12 +4093,14 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
         copyToClipboard(highlightMarkdown(h));
         flashButtonText(copyBtn, "Copied!");
       });
-      var delBtn = document.createElement("button");
-      delBtn.textContent = "Delete";
-      delBtn.addEventListener("click", function () { removeHighlightById(h.id); });
       actions.appendChild(jumpBtn);
       actions.appendChild(copyBtn);
-      actions.appendChild(delBtn);
+      if (isOwnHighlight(h)) {
+        var delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.addEventListener("click", function () { removeHighlightById(h.id); });
+        actions.appendChild(delBtn);
+      }
 
       item.appendChild(quote);
       item.appendChild(note);
@@ -4152,7 +4176,7 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
       delBtn.setAttribute("aria-label", "Delete note");
       delBtn.title = "Delete note";
       actions.appendChild(editBtn);
-      actions.appendChild(delBtn);
+      if (isOwnHighlight(h)) actions.appendChild(delBtn);
       header.appendChild(quote);
       header.appendChild(actions);
 
@@ -4166,6 +4190,7 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
       });
       delBtn.addEventListener("click", function (e) {
         e.stopPropagation();
+        if (!isOwnHighlight(h)) return;
         var l = loadHighlights();
         l.forEach(function (x) { if (x.id === h.id) x.note = ""; });
         saveHighlights(l);
@@ -4433,7 +4458,17 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
     var noteBtn = selToolbar.querySelector(".reader-note-btn");
     var removeBtn = selToolbar.querySelector(".reader-remove");
     if (noteBtn) noteBtn.style.display = manageDisplay;
-    if (removeBtn) removeBtn.style.display = manageDisplay;
+    if (removeBtn) {
+      var canDelete = false;
+      if (hasMark && activeMarkId) {
+        var activeHl = findHighlight(activeMarkId);
+        canDelete = !!(activeHl && isOwnHighlight(activeHl));
+      }
+      removeBtn.style.display = canDelete ? manageDisplay : "none";
+      removeBtn.disabled = !canDelete;
+      removeBtn.setAttribute("aria-disabled", canDelete ? "false" : "true");
+      removeBtn.title = canDelete ? "Remove highlight" : "You can only remove your own highlights";
+    }
   }
 
   /* ---------------------------------------- highlight boundary drag handles */
@@ -4709,7 +4744,10 @@ F. N. Bostancı <em class="ltx_emph ltx_font_italic">et al.</em>, “Extended 
     var removeBtn = selToolbar.querySelector(".reader-remove");
     if (removeBtn) removeBtn.addEventListener("click", function (e) {
       e.stopPropagation();
-      if (activeMarkId) removeHighlightById(activeMarkId);
+      if (!activeMarkId) return;
+      var hl = findHighlight(activeMarkId);
+      if (hl && !isOwnHighlight(hl)) return;
+      removeHighlightById(activeMarkId);
       hideSelToolbar();
     });
 

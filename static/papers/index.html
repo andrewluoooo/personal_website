@@ -2660,6 +2660,11 @@ input[type=file] { display: none; }
         var changed = false;
         list.forEach(function (h) {
           if (!h || typeof h !== "object") return;
+          var theirs = (h.authorName ? String(h.authorName) : "").trim();
+          // Only restamp highlights already owned by this account (or legacy
+          // unmarked when signed in as anonymous "You"). Never rewrite others.
+          var isOwn = theirs ? theirs === name : name === "You";
+          if (!isOwn) return;
           if (h.authorName !== name || !!h.authorHasAvatar !== hasAvatar) {
             h.authorName = name;
             h.authorHasAvatar = hasAvatar;
