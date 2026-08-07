@@ -179,12 +179,19 @@ def _public_index_entry(it: dict) -> dict:
     }
 
 
+# Public static pages always treat the visitor as a guest so Andrew's
+# seeded highlights are not deletable (isOwnHighlight compares authorName).
+STATIC_VIEWER_PROFILE = {"displayName": "Guest", "hasAvatar": False}
+
+
 def _static_bootstrap(papers: list[dict], profile: dict, avatar_url: str = "") -> str:
     payload = json.dumps(papers, separators=(",", ":"))
     # Prevent </script> breakouts in titles/summaries.
     payload = payload.replace("<", "\\u003c").replace(">", "\\u003e")
-    display = json.dumps((profile.get("displayName") or "Andrew").strip() or "Andrew")
-    has_avatar = "true" if profile.get("hasAvatar") else "false"
+    # Viewer identity is always Guest on the public snapshot — not the vault author.
+    viewer = profile if profile.get("displayName") == "Guest" else STATIC_VIEWER_PROFILE
+    display = json.dumps((viewer.get("displayName") or "Guest").strip() or "Guest")
+    has_avatar = "true" if viewer.get("hasAvatar") else "false"
     avatar_js = json.dumps(avatar_url or "")
     return f"""<script>
 window.__STATIC_PAPERS__ = {payload};
@@ -223,13 +230,15 @@ window.__paperReaderProfile = {{ displayName: {display}, hasAvatar: {has_avatar}
       return jsonResp(profile);
     }}
     if (path === "/api/account" && method === "POST") {{
+      // Account edits are disabled on the static snapshot — keep Guest.
       return jsonResp({{
         ok: true,
-        displayName: body.displayName || profile.displayName,
+        displayName: profile.displayName,
         hasAvatar: !!profile.hasAvatar
       }});
     }}
     if (path === "/api/account/avatar" && method === "GET" && avatarUrl) {{
+      // Author-chip avatars still load Andrew's photo via this path.
       return origFetch(avatarUrl, init);
     }}
     if (path.indexOf("/api/papers/") === 0) {{
@@ -287,7 +296,8 @@ def _build_library_index(
     from paper_reader.palette import get_palette_html  # noqa: WPS433
     from paper_reader.server import HOME_PAGE_HTML  # noqa: WPS433
 
-    profile = profile or {"displayName": "Andrew", "hasAvatar": False}
+    # Library UI uses Guest viewer; highlight labels still come from seeded data.
+    profile = profile or dict(STATIC_VIEWER_PROFILE)
     html_out = HOME_PAGE_HTML
     html_out = html_out.replace("<!--AUTH_LOGOUT_SLOT-->", STATIC_NOTE_HTML)
     # Point paper links at static reader pages under /papers/<id>/
@@ -437,14 +447,18 @@ def _load_account_profile(vdir: Path) -> dict:
     return {"displayName": display, "hasAvatar": has_avatar}
 
 
-def _profile_bootstrap_script(profile: dict, avatar_url: str) -> str:
-    """Set __paperReaderProfile before reader JS restamps highlights to 'You'."""
-    payload = json.dumps(profile, separators=(",", ":"))
-    # Escape for embedding; also rewrite avatar fetches to the static asset.
+def _profile_bootstrap_script(viewer: dict, avatar_url: str) -> str:
+    """Bootstrap the *viewer* as Guest so Andrew's highlights are not deletable.
+
+    Seeded highlight ``authorName`` / ``authorHasAvatar`` stay intact; restamp
+    skips non-own highlights. Avatar URL rewrite still serves Andrew's photo
+    for label chips that fetch ``/api/account/avatar``.
+    """
+    payload = json.dumps(viewer, separators=(",", ":"))
     avatar_js = json.dumps(avatar_url)
     return f"""
 <script>
-/* Static snapshot account profile — prevents highlight restamp → "You" */
+/* Static snapshot viewer = Guest (not vault author). Labels keep seeded authorName. */
 window.__paperReaderProfile = {payload};
 (function () {{
   var avatarUrl = {avatar_js};
@@ -456,6 +470,16 @@ window.__paperReaderProfile = {payload};
     var method = ((init && init.method) || "GET").toUpperCase();
     if (path === "/api/account" && method === "GET") {{
       return Promise.resolve(new Response(JSON.stringify(profile), {{
+        status: 200,
+        headers: {{ "Content-Type": "application/json" }}
+      }}));
+    }}
+    if (path === "/api/account" && method === "POST") {{
+      return Promise.resolve(new Response(JSON.stringify({{
+        ok: true,
+        displayName: profile.displayName,
+        hasAvatar: !!profile.hasAvatar
+      }}), {{
         status: 200,
         headers: {{ "Content-Type": "application/json" }}
       }}));
@@ -597,9 +621,15 @@ def main() -> None:
     ]
 
     ls_dump = _load_localstorage_dump()
-    profile = _load_account_profile(vdir)
-    ls_dump = _stamp_highlight_authors(ls_dump, profile)
-    print(f"account profile: displayName={profile['displayName']!r} hasAvatar={profile['hasAvatar']}")
+    # Vault author stamps highlight labels; public viewer is always Guest.
+    author_profile = _load_account_profile(vdir)
+    viewer_profile = dict(STATIC_VIEWER_PROFILE)
+    ls_dump = _stamp_highlight_authors(ls_dump, author_profile)
+    print(
+        f"author labels: displayName={author_profile['displayName']!r} "
+        f"hasAvatar={author_profile['hasAvatar']}; "
+        f"viewer={viewer_profile['displayName']!r}"
+    )
 
     # Persist a copy next to the vault for future regenerations (not a secret).
     if ls_dump:
@@ -626,7 +656,7 @@ def main() -> None:
 
     written = 0
     seeded_papers = 0
-    profile_script = _profile_bootstrap_script(profile, avatar_url)
+    profile_script = _profile_bootstrap_script(viewer_profile, avatar_url)
     for it in sorted(active_for_pages, key=lambda x: (x.get("title") or "").lower()):
         pid = str(it["id"])
         enc = vdir / f"{pid}.html.enc"
@@ -681,7 +711,7 @@ def main() -> None:
 
     # Library home needs all highlight keys so the info panel can list them.
     hl_seed = {k: v for k, v in ls_dump.items() if k.startswith(HIGHLIGHT_PREFIX)}
-    library_html = _build_library_index(pkg, library_papers, profile, avatar_url)
+    library_html = _build_library_index(pkg, library_papers, viewer_profile, avatar_url)
     library_html = _inject_head_script(library_html, _storage_seed_script(hl_seed))
     (OUT / "index.html").write_text(library_html, encoding="utf-8")
     print(f"wrote library UI → {OUT / 'index.html'}")
@@ -693,8 +723,9 @@ def main() -> None:
         "totalHighlights": total_n,
         "highlightsWithNotes": noted_n,
         "seededReaderPages": seeded_papers,
-        "displayName": profile.get("displayName"),
-        "hasAvatar": bool(profile.get("hasAvatar")),
+        "authorDisplayName": author_profile.get("displayName"),
+        "authorHasAvatar": bool(author_profile.get("hasAvatar")),
+        "viewerDisplayName": viewer_profile.get("displayName"),
         "titles": [],
     }
     titles = []
@@ -712,7 +743,8 @@ def main() -> None:
     print(
         f"highlights: {papers_n} papers, {total_n} highlights, "
         f"{noted_n} with notes (seeded into {seeded_papers} reader pages); "
-        f"author={profile.get('displayName')!r}"
+        f"author={author_profile.get('displayName')!r} "
+        f"viewer={viewer_profile.get('displayName')!r}"
     )
 
     _clear_hugo_papers_override()

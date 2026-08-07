@@ -3,8 +3,9 @@
   "totalHighlights": 16,
   "highlightsWithNotes": 0,
   "seededReaderPages": 4,
-  "displayName": "Andrew",
-  "hasAvatar": true,
+  "authorDisplayName": "Andrew",
+  "authorHasAvatar": true,
+  "viewerDisplayName": "Guest",
   "titles": [
     "FlowGNN: A Dataflow Architecture for Real-Time Workload-Agnostic Graph Neural Network Inference",
     "Hardware-Enabled Fuzzy Inference:Architectures, Platforms, and Emerging Trends",

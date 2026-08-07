@@ -16,8 +16,8 @@
 
 
 <script>
-/* Static snapshot account profile — prevents highlight restamp → "You" */
-window.__paperReaderProfile = {"displayName":"Andrew","hasAvatar":true};
+/* Static snapshot viewer = Guest (not vault author). Labels keep seeded authorName. */
+window.__paperReaderProfile = {"displayName":"Guest","hasAvatar":false};
 (function () {
   var avatarUrl = "/papers/avatar.jpg";
   var profile = window.__paperReaderProfile || {};
@@ -28,6 +28,16 @@ window.__paperReaderProfile = {"displayName":"Andrew","hasAvatar":true};
     var method = ((init && init.method) || "GET").toUpperCase();
     if (path === "/api/account" && method === "GET") {
       return Promise.resolve(new Response(JSON.stringify(profile), {
+        status: 200,
+        headers: { "Content-Type": "application/json" }
+      }));
+    }
+    if (path === "/api/account" && method === "POST") {
+      return Promise.resolve(new Response(JSON.stringify({
+        ok: true,
+        displayName: profile.displayName,
+        hasAvatar: !!profile.hasAvatar
+      }), {
         status: 200,
         headers: { "Content-Type": "application/json" }
       }));
