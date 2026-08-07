@@ -5,7 +5,7 @@
 
 [[main]]
 	name = "papers"
-	pageRef = "papers"
+	url = "/papers/"
 	weight = 25
 
 [[main]]

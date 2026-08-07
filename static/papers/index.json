@@ -7,9 +7,15 @@
     ],
     "venue": "",
     "summary": "In recent years, edge-vision monitoring systems for applications such as smart animal husbandry have faced strict tripartite constraints: maintaining input resolution under extremely limited transmission bandwidth and strict power budgets. Conventional dense convolutional neural networks (CNNs) cannot satisfy the resou",
-    "url": "/papers/ae2b43f1b415/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785640577.3498418,
-    "tags": []
+    "lastOpenedAt": 1786074193.9708989,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.26835v2.tar.gz",
+    "url": "/papers/ae2b43f1b415/"
   },
   {
     "id": "9d411ebf064b",
@@ -19,9 +25,15 @@
     ],
     "venue": "",
     "summary": "Neural Network Accelerators have gained popularity in recent years due to their greater efficiency than CPU-based platforms.\nOften, these accelerators utilize different hardware units for univariate activation functions, such as tanh, and the multivariate softmax, thereby missing opportunities for resource sharing betw",
-    "url": "/papers/9d411ebf064b/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1786063120.656659,
-    "tags": []
+    "lastOpenedAt": 1786074193.4662669,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2608.04734v1.tar.gz",
+    "url": "/papers/9d411ebf064b/"
   },
   {
     "id": "c0fcf48ad213",
@@ -35,9 +47,15 @@
     ],
     "venue": "Asia and South Pacific Design Automation\nConference; January 2027; Tokyo, Japan",
     "summary": "Large language model (LLM) agents optimize the power, performance, and area\n(PPA) of register-transfer-level (RTL) designs by iterating over edits, synthesis,\nand PPA analysis, paying a dollar cost for every LLM call. Prior agents report the quality reached without its normalized cost, attribute\nthat quality to an engi",
-    "url": "/papers/c0fcf48ad213/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785621537.005345,
-    "tags": []
+    "lastOpenedAt": 1786074194.020503,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.27879v1.tar.gz",
+    "url": "/papers/c0fcf48ad213/"
   },
   {
     "id": "ce86baa6c07b",
@@ -47,9 +65,15 @@
     ],
     "venue": "",
     "summary": "Fine-grained weight pruning and activation sparsification have emerged as effective approaches for reducing the compute and memory cost of inference for Transformer models. In the moderate-sparsity regime, Gustavson\u2019s dataflow provides a natural execution model for exploiting both activation and weight sparsity on vect",
-    "url": "/papers/ce86baa6c07b/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785647738.520472,
-    "tags": []
+    "lastOpenedAt": 1786074193.930756,
+    "deletedAt": null,
+    "sourceFilename": "conference_101719.tex",
+    "url": "/papers/ce86baa6c07b/"
   },
   {
     "id": "1a582b339f07",
@@ -66,9 +90,15 @@
     ],
     "venue": "",
     "summary": "Prefill \u2013 decode disaggregation ( PD ) and roofline-based operator placement are common strategies for partitioning Large Language Model (LLM) inference across heterogeneous systems, but they are often insufficient in practice. End-to-end latency also depends on workload shape, runtime device contention, and persistent",
-    "url": "/papers/1a582b339f07/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785687450.742883,
-    "tags": []
+    "lastOpenedAt": 1786074193.8837771,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.25498v1.tar.gz",
+    "url": "/papers/1a582b339f07/"
   },
   {
     "id": "bf8ff4dfc06e",
@@ -79,9 +109,15 @@
     ],
     "venue": "",
     "summary": "Modern integrated circuits (ICs) are becoming increasingly complex,\nmaking functional verification a major bottleneck.\nThe dominant hardware formal verification methodology, model checking, verifies each design instance separately and exposes only pass/fail results, so the reasoning behind a proof stays locked inside s",
-    "url": "/papers/bf8ff4dfc06e/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785645983.808866,
-    "tags": []
+    "lastOpenedAt": 1786074193.958661,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.27259v1.tar.gz",
+    "url": "/papers/bf8ff4dfc06e/"
   },
   {
     "id": "55e1c0bf7dc6",
@@ -91,9 +127,15 @@
     ],
     "venue": "",
     "summary": "DRAM read disturbance, like RowHammer and RowPress, is a critical robustness issue where accessing DRAM can cause unintended bitflips in other unaccessed DRAM locations. DRAM read disturbance bitflips significantly impact the safe, secure, and reliable operation of DRAM-based computing systems. Many prior works extensi",
-    "url": "/papers/55e1c0bf7dc6/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785631797.739757,
-    "tags": []
+    "lastOpenedAt": 1786074193.997471,
+    "deletedAt": null,
+    "sourceFilename": "dram_test.tar.gz",
+    "url": "/papers/55e1c0bf7dc6/"
   },
   {
     "id": "26fc4fdec069",
@@ -101,9 +143,15 @@
     "authors": [],
     "venue": "",
     "summary": "",
-    "url": "/papers/26fc4fdec069/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785623976.123878,
-    "tags": []
+    "lastOpenedAt": 1786074194.0119739,
+    "deletedAt": null,
+    "sourceFilename": "DGNN-Booster\uff1a A Generic FPGA Accelerator Framework For Dynamic Graph Neural Network Inference \uff5c IEEE Conference Publication \uff5c IEEE Xplore (8_1_2026 4\uff1a39\uff1a18 PM).html",
+    "url": "/papers/26fc4fdec069/"
   },
   {
     "id": "9bffde5eb9cf",
@@ -115,10 +163,16 @@
       "Yuan Yao"
     ],
     "venue": "",
-    "summary": "Scaling monolithic multicores is increasingly constrained by power/thermal limits, yield, and rising manufacturing and testing costs. Chiplet designs address these challenges by partitioning large dies into smaller parts (typically multiple core-complex dies and an I/O die) linked via high-bandwidth physical fabrics (",
-    "url": "/papers/9bffde5eb9cf/",
+    "summary": "Scaling monolithic multicores is increasingly constrained by power/thermal limits, yield, and rising manufacturing and testing costs. Chiplet designs address these challenges by partitioning large dies into smaller parts (typically multiple core-complex dies and an I/O die) linked via high-bandwidth physical fabrics ( ",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785691822.7447639,
-    "tags": []
+    "lastOpenedAt": 1786074193.8560598,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.24221v2.tar.gz",
+    "url": "/papers/9bffde5eb9cf/"
   },
   {
     "id": "48d2c5af78ce",
@@ -131,9 +185,15 @@
     ],
     "venue": "63rd ACM/IEEE Design Automation Conference; July 26\u201329, 2026; Long Beach, CA, USA",
     "summary": "3D field-programmable gate arrays (FPGAs) promise higher performance through\nvertical integration. However, existing placement tools, largely inherited from 2D frameworks, fail to capture the unique delay characteristics and optimization dynamics of 3D\nfabrics. We introduce a 3D FPGA placement flow that integrates part",
-    "url": "/papers/48d2c5af78ce/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": true,
+    "completed": false,
     "addedAt": 1786053551.915263,
-    "tags": []
+    "lastOpenedAt": 1786074193.485902,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2604.01078v1.tar.gz",
+    "url": "/papers/48d2c5af78ce/"
   },
   {
     "id": "b39ea111a482",
@@ -143,9 +203,15 @@
     ],
     "venue": "",
     "summary": "Scientific computing applications, such as computational fluid dynamics and climate modeling, typically rely on 64-bit double-precision floating-point operations, which are extremely costly in terms of computation, memory, and energy. While the machine learning community has successfully utilized low-precision computat",
-    "url": "/papers/b39ea111a482/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785594445.680843,
-    "tags": []
+    "lastOpenedAt": 1786074194.12043,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2409.15073v1.tar.gz",
+    "url": "/papers/b39ea111a482/"
   },
   {
     "id": "6eacada92324",
@@ -155,9 +221,15 @@
     ],
     "venue": "",
     "summary": "Modern field-programmable gate arrays employ fracturable lookup tables (LUTs), each of which can implement either a single large-input function or two smaller functions within a shared physical LUT site. Conventional technology-mapping flows typically perform dual-output packing only after single-output LUT mapping, th",
-    "url": "/papers/6eacada92324/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785711150.786738,
-    "tags": []
+    "lastOpenedAt": 1786074352.274388,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.22756v1.tar.gz",
+    "url": "/papers/6eacada92324/"
   },
   {
     "id": "c9af6aee2597",
@@ -167,9 +239,15 @@
     ],
     "venue": "",
     "summary": "Graph neural networks (GNNs) have recently exploded in popularity thanks to their broad applicability to graph-related problems such as quantum chemistry, drug discovery, and high energy physics.\nHowever, meeting demand for novel GNN models and fast inference simultaneously is challenging due to the gap between develop",
-    "url": "/papers/c9af6aee2597/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785543816.494168,
-    "tags": []
+    "lastOpenedAt": 1786074194.1763809,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2204.13103v2.tar.gz",
+    "url": "/papers/c9af6aee2597/"
   },
   {
     "id": "5b2427f3605a",
@@ -179,9 +257,15 @@
     ],
     "venue": "",
     "summary": "Although High-Level Synthesis (HLS) has attracted considerable interest in hardware design, it has not yet become mainstream due to two primary challenges. First, current HLS hardware design benchmarks are outdated as they do not cover modern machine learning (ML) applications, preventing the rigorous development of HL",
-    "url": "/papers/5b2427f3605a/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785594396.355446,
-    "tags": []
+    "lastOpenedAt": 1786074194.1371698,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2504.15185v1 (1).tar.gz",
+    "url": "/papers/5b2427f3605a/"
   },
   {
     "id": "78743ab0a6d3",
@@ -192,10 +276,16 @@
       "Quevedo, Joel A."
     ],
     "venue": "MDPI",
-    "summary": "Valdez, R.; Maldonado, Y.; Quevedo, J.A. \n Fuzzy Hardware Tool: An Adaptable Tool to Facilitate the Implementation of Fuzzy Inference Systems in Hardware. Electronics 2023 , 12 , 2853.\n https://doi.org/10.3390/electronics12132853 Valdez R, Maldonado Y, Quevedo JA. \n Fuzzy Hardware Tool: An Adaptable Tool to Facilitate",
-    "url": "/papers/78743ab0a6d3/",
+    "summary": "Valdez, R.; Maldonado, Y.; Quevedo, J.A. \n Fuzzy Hardware Tool: An Adaptable Tool to Facilitate the Implementation of Fuzzy Inference Systems in Hardware. Electronics 2023 , 12 , 2853.\n https://doi.org/10.3390/electronics12132853 Valdez R, Maldonado Y, Quevedo JA. \n Fuzzy Hardware Tool: An Adaptable Tool to Facilitate ",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1786066108.027276,
-    "tags": []
+    "lastOpenedAt": 1786074193.433255,
+    "deletedAt": null,
+    "sourceFilename": "Fuzzy Hardware Tool\uff1a An Adaptable Tool to Facilitate the Implementation of Fuzzy Inference Systems in Hardware (8_6_2026 7\uff1a28\uff1a19 PM).html",
+    "url": "/papers/78743ab0a6d3/"
   },
   {
     "id": "6db50883d198",
@@ -206,9 +296,15 @@
     ],
     "venue": "",
     "summary": "",
-    "url": "/papers/6db50883d198/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1786066988.1793358,
-    "tags": []
+    "lastOpenedAt": 1786074852.246933,
+    "deletedAt": null,
+    "sourceFilename": "Fuzzy logic approach for controlling uncertain and nonlinear systems  a comprehensive review of applications and advances.epub",
+    "url": "/papers/6db50883d198/"
   },
   {
     "id": "a212191c1f7e",
@@ -218,9 +314,15 @@
     ],
     "venue": "",
     "summary": "We report the development of GPT-4, a large-scale, multimodal model which can accept image and text inputs and produce text outputs. While less capable than humans in many real-world scenarios, GPT-4 exhibits human-level performance on various professional and academic benchmarks, including passing a simulated bar exam",
-    "url": "/papers/a212191c1f7e/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785538444.840853,
-    "tags": []
+    "lastOpenedAt": 1786074194.191809,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2303.08774v6.tar.gz",
+    "url": "/papers/a212191c1f7e/"
   },
   {
     "id": "5dd0e969ba58",
@@ -233,9 +335,15 @@
     ],
     "venue": "",
     "summary": "The semiconductor industry is undergoing a dual revolution: the shift toward\nheterogeneous 2.5D chiplet systems and the integration of Large Language\nModels (LLMs) into Electronic Design Automation (EDA) flows. While these\nparadigms offer unprecedented benefits in yield, modularity, design\nproductivity, etc., they radi",
-    "url": "/papers/5dd0e969ba58/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1786064889.7953842,
-    "tags": []
+    "lastOpenedAt": 1786074193.456627,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2608.05063v1.tar.gz",
+    "url": "/papers/5dd0e969ba58/"
   },
   {
     "id": "cd92917fba6d",
@@ -245,9 +353,15 @@
     ],
     "venue": "",
     "summary": "Fuzzy logic systems are widely used for intelligent decision-making under uncertainty, offering interpretability and robustness across diverse applications. However, the growing demand for real-time edge intelligence has exposed the limitations of software-based fuzzy inference: unpredictable latency, excessive power c",
-    "url": "/papers/cd92917fba6d/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": true,
+    "completed": false,
     "addedAt": 1786064977.753896,
-    "tags": []
+    "lastOpenedAt": 1786078205.292063,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2608.04031v1.tar.gz",
+    "url": "/papers/cd92917fba6d/"
   },
   {
     "id": "df8a5ff4e75b",
@@ -256,10 +370,16 @@
       "Chao\u00a0Fang,\u00a0\nJun\u00a0Yin,\nMan\u00a0Shi,\nand\u00a0Marian\u00a0Verhelst"
     ],
     "venue": "",
-    "summary": "With the rapid adoption of long-context large language models (LLMs), the continuously growing KV cache during decoding has become the critical memory bottleneck. To tackle this challenge, we propose HiKV, a novel algorithm-hardware co-design that exploits KV cache redundancy through hierarchical importance awareness.",
-    "url": "/papers/df8a5ff4e75b/",
+    "summary": "With the rapid adoption of long-context large language models (LLMs), the continuously growing KV cache during decoding has become the critical memory bottleneck. To tackle this challenge, we propose HiKV, a novel algorithm-hardware co-design that exploits KV cache redundancy through hierarchical importance awareness. ",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785711446.7954628,
-    "tags": []
+    "lastOpenedAt": 1786074354.01879,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.22389v1.tar.gz",
+    "url": "/papers/df8a5ff4e75b/"
   },
   {
     "id": "e252e704aa54",
@@ -269,9 +389,15 @@
     ],
     "venue": "2024 ACM/IEEE International Symposium on\nMachine Learning for CAD; September 9\u201311, 2024; Salt Lake City, UT, USA",
     "summary": "Machine learning (ML) techniques have been applied to high-level synthesis (HLS) flows for quality-of-result (QoR) prediction and design space exploration (DSE). Nevertheless, the scarcity of accessible high-quality HLS datasets and the complexity of building such datasets present great challenges to FPGA and ML resear",
-    "url": "/papers/e252e704aa54/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785534454.1194901,
-    "tags": []
+    "lastOpenedAt": 1786074194.2593448,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2405.00820v3.tar.gz",
+    "url": "/papers/e252e704aa54/"
   },
   {
     "id": "f8729a022a6e",
@@ -280,10 +406,16 @@
       "Rishov Sarkar, Cong Hao"
     ],
     "venue": "",
-    "summary": "High-Level Synthesis allows hardware designers to create complex RTL designs using C/C++. The traditional HLS workflow involves iterations of C/C++ simulation for partial functional verification and HLS synthesis for coarse timing estimates. However, neither C/C++ simulation nor HLS synthesis estimates can account for",
-    "url": "/papers/f8729a022a6e/",
+    "summary": "High-Level Synthesis allows hardware designers to create complex RTL designs using C/C++. The traditional HLS workflow involves iterations of C/C++ simulation for partial functional verification and HLS synthesis for coarse timing estimates. However, neither C/C++ simulation nor HLS synthesis estimates can account for ",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785537510.275824,
-    "tags": []
+    "lastOpenedAt": 1786074194.211373,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2304.11219v1.tar.gz",
+    "url": "/papers/f8729a022a6e/"
   },
   {
     "id": "781b9f8fe86d",
@@ -293,9 +425,15 @@
     ],
     "venue": "",
     "summary": "High-Level Synthesis (HLS) enables rapid prototyping of complex hardware designs by translating C or C++ code to low-level RTL code. However, the testing and evaluation of HLS designs still typically rely on slow RTL-level simulators that can take hours to provide feedback, especially for complex designs. A recent work",
-    "url": "/papers/781b9f8fe86d/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785537524.9241679,
-    "tags": []
+    "lastOpenedAt": 1786074194.205765,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2404.09471v2.tar.gz",
+    "url": "/papers/781b9f8fe86d/"
   },
   {
     "id": "c05beea77d2d",
@@ -305,10 +443,16 @@
       "John Doe Department of Electrical Engineering University of Iowa Iowa City, IA, USA jdoe@uiowa.edu"
     ],
     "venue": "",
-    "summary": "Hardware designs, like software, are susceptible to bugs that can introduce security vulnerabilities and create opportunities for malicious exploitation. Unlike software vulnerabilities, however, hardware flaws become permanently embedded in silicon after fabrication, making them difficult or impossible to patch. Many",
-    "url": "/papers/c05beea77d2d/",
+    "summary": "Hardware designs, like software, are susceptible to bugs that can introduce security vulnerabilities and create opportunities for malicious exploitation. Unlike software vulnerabilities, however, hardware flaws become permanently embedded in silicon after fabrication, making them difficult or impossible to patch. Many ",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1786064852.337909,
-    "tags": []
+    "lastOpenedAt": 1786074193.46035,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2608.04907v1.tar.gz",
+    "url": "/papers/c05beea77d2d/"
   },
   {
     "id": "47825d18991b",
@@ -319,9 +463,15 @@
     ],
     "venue": "58th IEEE/ACM International Symposium on Microarchitecture; October 18\u201322, 2025; Seoul, Republic of Korea",
     "summary": "High-Level Synthesis (HLS) is increasingly popular for hardware design using C/C++ instead of Register-Transfer Level (RTL). To express concurrent hardware behavior in a sequential language like C/C++, HLS tools introduce constructs such as infinite loops and dataflow modules connected by FIFOs (first-in first-out). Wh",
-    "url": "/papers/47825d18991b/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785537360.835266,
-    "tags": []
+    "lastOpenedAt": 1786074194.228431,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2508.19299v1.tar.gz",
+    "url": "/papers/47825d18991b/"
   },
   {
     "id": "4bbd91160462",
@@ -330,10 +480,16 @@
       "Corey Lammie 0000-0001-5564-135612, Hadjer Benmeziane 0000-0002-5259-07491, William Andrew Simon 0000-0001-7357-72041, Irem Boybat 0000-0002-4255-86221"
     ],
     "venue": "",
-    "summary": "Heterogeneous DRAM-based processing-in-memory (PIM)-GPU systems promise significant efficiency gains for decode-phase large language model (LLM) inference, particularly in long-output generation, yet current design practices overlook critical factors that determine real-world performance. Through systematic evaluation",
-    "url": "/papers/4bbd91160462/",
+    "summary": "Heterogeneous DRAM-based processing-in-memory (PIM)-GPU systems promise significant efficiency gains for decode-phase large language model (LLM) inference, particularly in long-output generation, yet current design practices overlook critical factors that determine real-world performance. Through systematic evaluation ",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1786071376.5559416,
-    "tags": []
+    "lastOpenedAt": 1786074943.793738,
+    "deletedAt": null,
+    "sourceFilename": "",
+    "url": "/papers/4bbd91160462/"
   },
   {
     "id": "92422f81c50a",
@@ -342,10 +498,16 @@
       "Ilia Sobakinskikh and Paul Alexander Bilokon"
     ],
     "venue": "",
-    "summary": "In this work, we explore how the inference time of a Transformer Neural Network can be efficiently optimized with applications to real-time anomaly detection in financial time series.\nThe financial time series are price series such as asset prices.\nUnfortunately, the data is often with errors or outliers that make the",
-    "url": "/papers/92422f81c50a/",
+    "summary": "In this work, we explore how the inference time of a Transformer Neural Network can be efficiently optimized with applications to real-time anomaly detection in financial time series.\nThe financial time series are price series such as asset prices.\nUnfortunately, the data is often with errors or outliers that make the ",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785712128.548741,
-    "tags": []
+    "lastOpenedAt": 1786074193.5107331,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.22786v1.tar.gz",
+    "url": "/papers/92422f81c50a/"
   },
   {
     "id": "3b5a2086a102",
@@ -355,9 +517,15 @@
     ],
     "venue": "",
     "summary": "Processing-in-Memory\u00a0(PIM) addresses the memory wall by co-locating computation with memory, but because real PIM hardware remains scarce, simulation is the primary way to explore the PIM design space. Yet existing PIM simulators each cover only part of that space: they typically model a single memory technology, fix p",
-    "url": "/papers/3b5a2086a102/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785692184.012514,
-    "tags": []
+    "lastOpenedAt": 1786074193.826998,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2607.24196v1.tar.gz",
+    "url": "/papers/3b5a2086a102/"
   },
   {
     "id": "983884cad871",
@@ -367,9 +535,15 @@
     ],
     "venue": "",
     "summary": "We present the first deep learning model to successfully learn control policies directly from high-dimensional sensory input using reinforcement learning.\nThe model is a convolutional neural network, trained with a variant of Q-learning, whose input is raw pixels and whose output is a value function estimating future r",
-    "url": "/papers/983884cad871/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785518585.3437068,
-    "tags": []
+    "lastOpenedAt": 1786074194.27299,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-1312.5602v1.tar.gz",
+    "url": "/papers/983884cad871/"
   },
   {
     "id": "15e007a9b596",
@@ -379,9 +553,15 @@
     ],
     "venue": "",
     "summary": "High-level synthesis (HLS) accelerates FPGA design by rapidly generating diverse implementations using optimization directives.\nHowever, even with cycle-accurate C/RTL co-simulation, the reported clock cycles often differ significantly from actual FPGA performance. This discrepancy hampers accurate bottleneck identific",
-    "url": "/papers/15e007a9b596/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785592756.770336,
-    "tags": []
+    "lastOpenedAt": 1786074194.155583,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2504.03879v2.tar.gz",
+    "url": "/papers/15e007a9b596/"
   },
   {
     "id": "9757276c24a3",
@@ -391,8 +571,14 @@
     ],
     "venue": "IEEE/ACM International Conference on Computer-Aided Design; October 27\u201331, 2024; New York, NY, USA",
     "summary": "Edge computing is a distributed computing paradigm that collects and processes data at or near the source of data generation. The on-device learning at edge relies on device-to-device wireless communication to facilitate real-time data sharing and collaborative decision-making among multiple devices. This significantly",
-    "url": "/papers/9757276c24a3/",
+    "status": "inbox",
+    "tags": [],
+    "pinned": false,
+    "completed": false,
     "addedAt": 1785611393.6585228,
-    "tags": []
+    "lastOpenedAt": 1786074194.0763159,
+    "deletedAt": null,
+    "sourceFilename": "arXiv-2408.05617v3.tar.gz",
+    "url": "/papers/9757276c24a3/"
   }
 ]
