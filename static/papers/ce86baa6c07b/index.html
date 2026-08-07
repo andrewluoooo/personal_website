@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_scroll::At-the-Roofline%20Sparse%20Tensor%20Contractions%20on%20Vector%20Processors%20for%20Transformer%20Inference":"0"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>At-the-Roofline Sparse Tensor Contractions on Vector Processors for Transformer Inference</title>

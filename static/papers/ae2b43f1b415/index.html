@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_scroll::A%20Low-Power%20Sparse%20Convolution%20Accelerator%20with%20Idle-First-Task-Assignment%20for%20Edge%20Vision":"518"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A Low-Power Sparse Convolution Accelerator with Idle-First-Task-Assignment for Edge Vision</title>

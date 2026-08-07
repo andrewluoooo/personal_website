@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_highlights::A%20Systolic%20Array%20Architecture%20for%20Nonlinear%20Activation%20Functions%20and%20Softmax%20Computation%20using%20Chebyshev%20Polynomials":"[]","paper_reader_scroll::A%20Systolic%20Array%20Architecture%20for%20Nonlinear%20Activation%20Functions%20and%20Softmax%20Computation%20using%20Chebyshev%20Polynomials":"455","paper_reader_pct::A%20Systolic%20Array%20Architecture%20for%20Nonlinear%20Activation%20Functions%20and%20Softmax%20Computation%20using%20Chebyshev%20Polynomials":"0.023863219174489955"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A Systolic Array Architecture for Nonlinear Activation Functions and Softmax Computation using Chebyshev Polynomials</title>

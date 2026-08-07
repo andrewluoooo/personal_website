@@ -4,13 +4,30 @@
 Produces an exact static snapshot of the paper_reader library UI (same CSS/JS)
 plus self-contained reader pages. No backend — API calls are stubbed client-side.
 
+Highlights/notes live in the browser (localStorage keys
+``paper_reader_highlights::<encodeURIComponent(title)>``); notes are the
+``note`` field on each highlight object. Pass a dump via
+PAPER_READER_LOCALSTORAGE_JSON so they are seeded into the static pages.
+
 Requires:
   PAPER_READER_SECRET_KEY   Account secret (pr_…) that unlocks the vault
   Optional PAPER_READER_LIBRARY_DIR  Override library root (default ~/.paper_reader_library)
   Optional PAPER_READER_PACKAGE_DIR  Path to reader-research-paper repo
+  Optional PAPER_READER_LOCALSTORAGE_JSON  Path to localStorage dump JSON
+      Shape: {"data": {"paper_reader_highlights::…": "[…]", …}}
+      or a flat {key: value} map. Also checked at
+      ~/.paper_reader_library/localstorage-export.json
 
 Usage:
   PAPER_READER_SECRET_KEY=pr_… python3 scripts/export-paper-library.py
+
+Dump localStorage from an open Chrome tab on http://127.0.0.1:8765 (example)::
+
+  osascript -e 'tell application "Google Chrome" to execute
+    (first tab of first window whose URL starts with "http://127.0.0.1:8765")
+    javascript "JSON.stringify({data:Object.fromEntries(
+      [...Array(localStorage.length)].map((_,i)=>{const k=localStorage.key(i);
+      return [k, localStorage.getItem(k)]}).filter(([k])=>k&&k.startsWith(\"paper_reader_\")))})"'
 
 Never commits secret keys. Does not write keys into the site tree.
 """
@@ -24,6 +41,7 @@ import os
 import re
 import shutil
 import sys
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,6 +49,9 @@ OUT = ROOT / "static" / "papers"
 CONTENT_PAPERS = ROOT / "content" / "papers"
 LAYOUTS_PAPERS = ROOT / "layouts" / "papers"
 PBKDF2 = 200_000
+HIGHLIGHT_PREFIX = "paper_reader_highlights::"
+SCROLL_PREFIX = "paper_reader_scroll::"
+PCT_PREFIX = "paper_reader_pct::"
 
 BACK_SNIPPET = """
 <style>
@@ -319,6 +340,124 @@ def _clear_hugo_papers_override() -> None:
         print(f"removed {LAYOUTS_PAPERS}")
 
 
+def _localstorage_candidates() -> list[Path]:
+    env = os.environ.get("PAPER_READER_LOCALSTORAGE_JSON", "").strip()
+    paths: list[Path] = []
+    if env:
+        paths.append(Path(env).expanduser())
+    paths.append(_library_dir() / "localstorage-export.json")
+    paths.append(Path("/tmp/paper_reader_localstorage.json"))
+    return paths
+
+
+def _load_localstorage_dump() -> dict[str, str]:
+    """Return flat {localStorageKey: stringValue} for paper_reader_* keys."""
+    for path in _localstorage_candidates():
+        if not path.is_file():
+            continue
+        try:
+            raw = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError) as e:
+            print(f"warn: could not read {path}: {e}", file=sys.stderr)
+            continue
+        if isinstance(raw, dict) and isinstance(raw.get("data"), dict):
+            data = raw["data"]
+        elif isinstance(raw, dict):
+            data = raw
+        else:
+            continue
+        out: dict[str, str] = {}
+        for k, v in data.items():
+            if not isinstance(k, str) or not k.startswith("paper_reader_"):
+                continue
+            if isinstance(v, (dict, list)):
+                out[k] = json.dumps(v, separators=(",", ":"))
+            elif isinstance(v, str):
+                out[k] = v
+            else:
+                out[k] = json.dumps(v)
+        print(f"loaded {len(out)} localStorage keys from {path}")
+        return out
+    print(
+        "note: no localStorage dump found — highlights/notes will not be seeded.\n"
+        "      Set PAPER_READER_LOCALSTORAGE_JSON or write "
+        f"{_library_dir() / 'localstorage-export.json'}",
+        file=sys.stderr,
+    )
+    return {}
+
+
+def _html_title(html: str) -> str:
+    m = re.search(r"<title>(.*?)</title>", html, flags=re.I | re.S)
+    if not m:
+        return ""
+    return re.sub(r"\s+", " ", m.group(1)).strip()
+
+
+def _seed_keys_for_title(ls: dict[str, str], title: str) -> dict[str, str]:
+    """Pick highlight/scroll/pct keys that belong to this document title."""
+    if not title:
+        return {}
+    enc = urllib.parse.quote(title, safe="")
+    wanted = (
+        HIGHLIGHT_PREFIX + enc,
+        SCROLL_PREFIX + enc,
+        PCT_PREFIX + enc,
+    )
+    return {k: ls[k] for k in wanted if k in ls}
+
+
+def _storage_seed_script(seed: dict[str, str]) -> str:
+    """Inject early so reader JS loadHighlights() sees seeded data."""
+    if not seed:
+        return ""
+    payload = json.dumps(seed, separators=(",", ":"))
+    payload = payload.replace("<", "\\u003c").replace(">", "\\u003e")
+    return f"""
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {{
+  var seed = {payload};
+  try {{
+    Object.keys(seed).forEach(function (k) {{
+      localStorage.setItem(k, seed[k]);
+    }});
+  }} catch (e) {{}}
+}})();
+</script>
+"""
+
+
+def _inject_head_script(html: str, script: str) -> str:
+    if not script:
+        return html
+    m = re.search(r"<head[^>]*>", html, flags=re.I)
+    if m:
+        i = m.end()
+        return html[:i] + "\n" + script + html[i:]
+    return script + html
+
+
+def _highlight_stats(ls: dict[str, str]) -> tuple[int, int, int]:
+    """Return (papers_with_highlights, total_highlights, highlights_with_notes)."""
+    papers = 0
+    total = 0
+    noted = 0
+    for k, v in ls.items():
+        if not k.startswith(HIGHLIGHT_PREFIX):
+            continue
+        try:
+            arr = json.loads(v)
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(arr, list) or not arr:
+            continue
+        papers += 1
+        total += len(arr)
+        noted += sum(1 for h in arr if isinstance(h, dict) and str(h.get("note") or "").strip())
+    return papers, total, noted
+
+
 def main() -> None:
     secret = os.environ.get("PAPER_READER_SECRET_KEY", "").strip()
     if not secret:
@@ -352,11 +491,25 @@ def main() -> None:
         if isinstance(i, dict) and i.get("id")
     ]
 
+    ls_dump = _load_localstorage_dump()
+    # Persist a copy next to the vault for future regenerations (not a secret).
+    if ls_dump:
+        cache = lib / "localstorage-export.json"
+        try:
+            cache.write_text(
+                json.dumps({"data": ls_dump}, indent=2),
+                encoding="utf-8",
+            )
+            print(f"cached localStorage dump → {cache}")
+        except OSError as e:
+            print(f"warn: could not cache localStorage dump: {e}", file=sys.stderr)
+
     if OUT.exists():
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
 
     written = 0
+    seeded_papers = 0
     for it in sorted(active_for_pages, key=lambda x: (x.get("title") or "").lower()):
         pid = str(it["id"])
         enc = vdir / f"{pid}.html.enc"
@@ -377,6 +530,24 @@ def main() -> None:
         else:
             html = BACK_SNIPPET + html
 
+        title = _html_title(html) or (it.get("title") or "")
+        seed = _seed_keys_for_title(ls_dump, title)
+        # Also try vault title if HTML title differs (rare truncation edge cases).
+        if not seed and it.get("title"):
+            seed = _seed_keys_for_title(ls_dump, str(it["title"]))
+        html = _inject_head_script(html, _storage_seed_script(seed))
+        hl_vals = [
+            v for k, v in seed.items() if k.startswith(HIGHLIGHT_PREFIX)
+        ]
+        if hl_vals:
+            try:
+                n = len(json.loads(hl_vals[0]))
+            except json.JSONDecodeError:
+                n = 0
+            if n:
+                seeded_papers += 1
+                print(f"seeded {n} highlights → {pid}")
+
         (paper_dir / "index.html").write_text(html, encoding="utf-8")
         written += 1
         print(f"wrote {pid} | {_clean_text(it.get('title') or pid, 70)}")
@@ -385,9 +556,38 @@ def main() -> None:
     manifest.sort(key=lambda x: (x.get("title") or "").lower())
     (OUT / "index.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
 
+    # Library home needs all highlight keys so the info panel can list them.
+    hl_seed = {k: v for k, v in ls_dump.items() if k.startswith(HIGHLIGHT_PREFIX)}
     library_html = _build_library_index(pkg, library_papers)
+    library_html = _inject_head_script(library_html, _storage_seed_script(hl_seed))
     (OUT / "index.html").write_text(library_html, encoding="utf-8")
     print(f"wrote library UI → {OUT / 'index.html'}")
+
+    # Public-safe summary (no raw localStorage secrets — highlights are reading notes).
+    papers_n, total_n, noted_n = _highlight_stats(ls_dump)
+    summary = {
+        "papersWithHighlights": papers_n,
+        "totalHighlights": total_n,
+        "highlightsWithNotes": noted_n,
+        "seededReaderPages": seeded_papers,
+        "titles": [],
+    }
+    titles = []
+    for k, v in ls_dump.items():
+        if not k.startswith(HIGHLIGHT_PREFIX):
+            continue
+        try:
+            arr = json.loads(v)
+        except json.JSONDecodeError:
+            continue
+        if isinstance(arr, list) and arr:
+            titles.append(urllib.parse.unquote(k[len(HIGHLIGHT_PREFIX) :]))
+    summary["titles"] = sorted(titles)
+    (OUT / "highlights.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    print(
+        f"highlights: {papers_n} papers, {total_n} highlights, "
+        f"{noted_n} with notes (seeded into {seeded_papers} reader pages)"
+    )
 
     _clear_hugo_papers_override()
     print(f"exported {written} papers → {OUT}")

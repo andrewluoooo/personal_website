@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_highlights::FlowGNN%3A%20A%20Dataflow%20Architecture%20for%20Real-Time%20Workload-Agnostic%20Graph%20Neural%20Network%20Inference":"[{\"id\":\"hl-ms9y5v3qyay2g\",\"color\":\"yellow\",\"note\":\"\",\"text\":\"Graph neural networks (GNNs) have recently exploded in popularity thanks to their broad applicability to graph-related problems such as quantum chemistry, drug discovery, and high energy physics.\",\"html\":\"Graph neural networks (GNNs) have recently exploded in popularity thanks to their broad applicability to graph-related problems such as quantum chemistry, drug discovery, and high energy physics.\",\"startPath\":[3,5,3,0],\"startOffset\":0,\"endPath\":[3,5,3,0],\"endOffset\":195,\"authorName\":\"Andrew\",\"authorHasAvatar\":true}]","paper_reader_scroll::FlowGNN%3A%20A%20Dataflow%20Architecture%20for%20Real-Time%20Workload-Agnostic%20Graph%20Neural%20Network%20Inference":"255"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FlowGNN: A Dataflow Architecture for Real-Time Workload-Agnostic Graph Neural Network Inference</title>

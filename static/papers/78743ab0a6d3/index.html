@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_scroll::Fuzzy%20Hardware%20Tool%3A%20An%20Adaptable%20Tool%20to%20Facilitate%20the%20Implementation%20of%20Fuzzy%20Inference%20Systems%20in%20Hardware":"1530","paper_reader_pct::Fuzzy%20Hardware%20Tool%3A%20An%20Adaptable%20Tool%20to%20Facilitate%20the%20Implementation%20of%20Fuzzy%20Inference%20Systems%20in%20Hardware":"0.06652463150571764"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fuzzy Hardware Tool: An Adaptable Tool to Facilitate the Implementation of Fuzzy Inference Systems in Hardware</title>

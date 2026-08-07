@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_highlights::Escaping%20Flatland%3A%20A%20Placement%20Flow%20for%20Enabling%203D%20FPGAs":"[]","paper_reader_scroll::Escaping%20Flatland%3A%20A%20Placement%20Flow%20for%20Enabling%203D%20FPGAs":"0","paper_reader_pct::Escaping%20Flatland%3A%20A%20Placement%20Flow%20for%20Enabling%203D%20FPGAs":"0"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Escaping Flatland: A Placement Flow for Enabling 3D FPGAs</title>

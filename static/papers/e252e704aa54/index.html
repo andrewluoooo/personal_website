@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_highlights::HLSFactory%3A%20A%20Framework%20Empowering%20High-Level%20Synthesis%20Datasets%20for%20Machine%20Learning%20and%20Beyond":"[]","paper_reader_scroll::HLSFactory%3A%20A%20Framework%20Empowering%20High-Level%20Synthesis%20Datasets%20for%20Machine%20Learning%20and%20Beyond":"0"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>HLSFactory: A Framework Empowering High-Level Synthesis Datasets for Machine Learning and Beyond</title>

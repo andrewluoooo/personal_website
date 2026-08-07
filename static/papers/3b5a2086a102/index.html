@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_highlights::PIMID%3A%20A%20Full-System%20Simulator%20with%20Intricacy%20and%20Diversity%20for%20Processing-in-Memory":"[]","paper_reader_scroll::PIMID%3A%20A%20Full-System%20Simulator%20with%20Intricacy%20and%20Diversity%20for%20Processing-in-Memory":"0"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PIMID: A Full-System Simulator with Intricacy and Diversity for Processing-in-Memory</title>

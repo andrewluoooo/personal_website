@@ -1,0 +1,12 @@
+{
+  "papersWithHighlights": 4,
+  "totalHighlights": 16,
+  "highlightsWithNotes": 0,
+  "seededReaderPages": 4,
+  "titles": [
+    "FlowGNN: A Dataflow Architecture for Real-Time Workload-Agnostic Graph Neural Network Inference",
+    "Hardware-Enabled Fuzzy Inference:Architectures, Platforms, and Emerging Trends",
+    "Optimizing Transformer Neural Network for Real-Time Outlier Detection on FPGAs",
+    "RealProbe: An Automated and Lightweight Performance Profiler for In-FPGA Execution of High-Level Synthesis Designs"
+  ]
+}

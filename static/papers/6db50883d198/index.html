@@ -1,6 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
+
+<script>
+/* Seeded paper_reader localStorage (highlights + notes) for static snapshot */
+(function () {
+  var seed = {"paper_reader_scroll::Fuzzy%20logic%20approach%20for%20controlling%20uncertain%20and%20nonlinear%20systems%3A%20a%20comprehensive%20review%20of%20applications%20and%20advances":"35990","paper_reader_pct::Fuzzy%20logic%20approach%20for%20controlling%20uncertain%20and%20nonlinear%20systems%3A%20a%20comprehensive%20review%20of%20applications%20and%20advances":"0.3528327598207896"};
+  try {
+    Object.keys(seed).forEach(function (k) {
+      localStorage.setItem(k, seed[k]);
+    });
+  } catch (e) {}
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fuzzy logic approach for controlling uncertain and nonlinear systems: a comprehensive review of applications and advances</title>
