@@ -14,6 +14,41 @@
 })();
 </script>
 
+
+<script>
+/* Static snapshot account profile — prevents highlight restamp → "You" */
+window.__paperReaderProfile = {"displayName":"Andrew","hasAvatar":true};
+(function () {
+  var avatarUrl = "/papers/avatar.jpg";
+  var profile = window.__paperReaderProfile || {};
+  var origFetch = window.fetch.bind(window);
+  window.fetch = function (input, init) {
+    var url = typeof input === "string" ? input : (input && input.url) || "";
+    var path = url.replace(/^https?:\/\/[^/]+/, "").split("?")[0];
+    var method = ((init && init.method) || "GET").toUpperCase();
+    if (path === "/api/account" && method === "GET") {
+      return Promise.resolve(new Response(JSON.stringify(profile), {
+        status: 200,
+        headers: { "Content-Type": "application/json" }
+      }));
+    }
+    if (path === "/api/account/avatar" && method === "GET" && avatarUrl) {
+      return origFetch(avatarUrl, init);
+    }
+    return origFetch(input, init);
+  };
+  // Reader chips hardcode /api/account/avatar — rewrite to static file.
+  if (avatarUrl) {
+    document.addEventListener("error", function (e) {
+      var t = e.target;
+      if (t && t.tagName === "IMG" && /\/api\/account\/avatar/.test(t.getAttribute("src") || "")) {
+        t.src = avatarUrl;
+      }
+    }, true);
+  }
+})();
+</script>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>On Design Principles for Efficient Heterogeneous DRAM-PIM-GPU Systems</title>
@@ -1993,7 +2028,7 @@ the 41st International Conference on Machine Learning</span>, ICML’24, JMLR.or
     if (hasAvatar) {
       var img = document.createElement("img");
       img.alt = "";
-      img.src = "/api/account/avatar";
+      img.src = "/papers/avatar.jpg";
       img.addEventListener("error", function () {
         av.textContent = (name || "?").charAt(0).toUpperCase();
       });
@@ -2097,7 +2132,7 @@ the 41st International Conference on Machine Learning</span>, ICML’24, JMLR.or
     if (h.authorHasAvatar) {
       var img = document.createElement("img");
       img.alt = "";
-      img.src = "/api/account/avatar";
+      img.src = "/papers/avatar.jpg";
       img.addEventListener("error", function () {
         av.textContent = (name || "?").charAt(0).toUpperCase();
       });

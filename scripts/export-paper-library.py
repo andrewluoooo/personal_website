@@ -179,15 +179,21 @@ def _public_index_entry(it: dict) -> dict:
     }
 
 
-def _static_bootstrap(papers: list[dict]) -> str:
+def _static_bootstrap(papers: list[dict], profile: dict, avatar_url: str = "") -> str:
     payload = json.dumps(papers, separators=(",", ":"))
     # Prevent </script> breakouts in titles/summaries.
     payload = payload.replace("<", "\\u003c").replace(">", "\\u003e")
+    display = json.dumps((profile.get("displayName") or "Andrew").strip() or "Andrew")
+    has_avatar = "true" if profile.get("hasAvatar") else "false"
+    avatar_js = json.dumps(avatar_url or "")
     return f"""<script>
 window.__STATIC_PAPERS__ = {payload};
 window.__PAPER_READER_STATIC__ = true;
+window.__paperReaderProfile = {{ displayName: {display}, hasAvatar: {has_avatar} }};
 (function () {{
   var papers = window.__STATIC_PAPERS__;
+  var profile = window.__paperReaderProfile;
+  var avatarUrl = {avatar_js};
   function paperHref(id) {{
     return "/papers/" + encodeURIComponent(id) + "/";
   }}
@@ -214,14 +220,17 @@ window.__PAPER_READER_STATIC__ = true;
     if (path === "/api/papers" && method === "GET") return jsonResp(papers);
     if (path === "/api/pipeline-status") return jsonResp([]);
     if (path === "/api/account" && method === "GET") {{
-      return jsonResp({{ displayName: "Andrew", hasAvatar: false }});
+      return jsonResp(profile);
     }}
     if (path === "/api/account" && method === "POST") {{
       return jsonResp({{
         ok: true,
-        displayName: body.displayName || "Andrew",
-        hasAvatar: false
+        displayName: body.displayName || profile.displayName,
+        hasAvatar: !!profile.hasAvatar
       }});
+    }}
+    if (path === "/api/account/avatar" && method === "GET" && avatarUrl) {{
+      return origFetch(avatarUrl, init);
     }}
     if (path.indexOf("/api/papers/") === 0) {{
       var rest = path.slice("/api/papers/".length);
@@ -268,11 +277,17 @@ window.__PAPER_READER_STATIC__ = true;
 """
 
 
-def _build_library_index(pkg: Path, papers: list[dict]) -> str:
+def _build_library_index(
+    pkg: Path,
+    papers: list[dict],
+    profile: dict | None = None,
+    avatar_url: str = "",
+) -> str:
     sys.path.insert(0, str(pkg))
     from paper_reader.palette import get_palette_html  # noqa: WPS433
     from paper_reader.server import HOME_PAGE_HTML  # noqa: WPS433
 
+    profile = profile or {"displayName": "Andrew", "hasAvatar": False}
     html_out = HOME_PAGE_HTML
     html_out = html_out.replace("<!--AUTH_LOGOUT_SLOT-->", STATIC_NOTE_HTML)
     # Point paper links at static reader pages under /papers/<id>/
@@ -302,13 +317,11 @@ def _build_library_index(pkg: Path, papers: list[dict]) -> str:
         ".add-paper-fab { display: none !important;",
         1,
     )
+    html_out = _rewrite_avatar_urls(html_out, avatar_url)
 
-    bootstrap = _static_bootstrap(papers)
+    bootstrap = _static_bootstrap(papers, profile, avatar_url)
     # Inject bootstrap early so fetch stub exists before library JS runs.
-    if "<head>" in html_out:
-        html_out = html_out.replace("<head>", "<head>\n" + bootstrap, 1)
-    else:
-        html_out = bootstrap + html_out
+    html_out = _inject_head_script(html_out, bootstrap)
 
     html_out = html_out.replace("</body>", get_palette_html("home") + "\n</body>")
 
@@ -407,6 +420,98 @@ def _seed_keys_for_title(ls: dict[str, str], title: str) -> dict[str, str]:
     return {k: ls[k] for k in wanted if k in ls}
 
 
+def _load_account_profile(vdir: Path) -> dict:
+    """Read vault profile.json → {displayName, hasAvatar} for static bootstrap."""
+    display = "Andrew"
+    profile_path = vdir / "profile.json"
+    if profile_path.is_file():
+        try:
+            raw = json.loads(profile_path.read_text(encoding="utf-8"))
+            if isinstance(raw, dict) and isinstance(raw.get("displayName"), str):
+                name = raw["displayName"].strip()
+                if name:
+                    display = name
+        except (OSError, json.JSONDecodeError):
+            pass
+    has_avatar = (vdir / "avatar.jpg").is_file()
+    return {"displayName": display, "hasAvatar": has_avatar}
+
+
+def _profile_bootstrap_script(profile: dict, avatar_url: str) -> str:
+    """Set __paperReaderProfile before reader JS restamps highlights to 'You'."""
+    payload = json.dumps(profile, separators=(",", ":"))
+    # Escape for embedding; also rewrite avatar fetches to the static asset.
+    avatar_js = json.dumps(avatar_url)
+    return f"""
+<script>
+/* Static snapshot account profile — prevents highlight restamp → "You" */
+window.__paperReaderProfile = {payload};
+(function () {{
+  var avatarUrl = {avatar_js};
+  var profile = window.__paperReaderProfile || {{}};
+  var origFetch = window.fetch.bind(window);
+  window.fetch = function (input, init) {{
+    var url = typeof input === "string" ? input : (input && input.url) || "";
+    var path = url.replace(/^https?:\\/\\/[^/]+/, "").split("?")[0];
+    var method = ((init && init.method) || "GET").toUpperCase();
+    if (path === "/api/account" && method === "GET") {{
+      return Promise.resolve(new Response(JSON.stringify(profile), {{
+        status: 200,
+        headers: {{ "Content-Type": "application/json" }}
+      }}));
+    }}
+    if (path === "/api/account/avatar" && method === "GET" && avatarUrl) {{
+      return origFetch(avatarUrl, init);
+    }}
+    return origFetch(input, init);
+  }};
+  // Reader chips hardcode /api/account/avatar — rewrite to static file.
+  if (avatarUrl) {{
+    document.addEventListener("error", function (e) {{
+      var t = e.target;
+      if (t && t.tagName === "IMG" && /\\/api\\/account\\/avatar/.test(t.getAttribute("src") || "")) {{
+        t.src = avatarUrl;
+      }}
+    }}, true);
+  }}
+}})();
+</script>
+"""
+
+
+def _stamp_highlight_authors(ls: dict[str, str], profile: dict) -> dict[str, str]:
+    """Ensure every highlight carries the vault displayName / avatar flag."""
+    name = (profile.get("displayName") or "Andrew").strip() or "Andrew"
+    has_avatar = bool(profile.get("hasAvatar"))
+    out = dict(ls)
+    for k, v in list(out.items()):
+        if not k.startswith(HIGHLIGHT_PREFIX):
+            continue
+        try:
+            arr = json.loads(v)
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(arr, list):
+            continue
+        changed = False
+        for h in arr:
+            if not isinstance(h, dict):
+                continue
+            if h.get("authorName") != name or bool(h.get("authorHasAvatar")) != has_avatar:
+                h["authorName"] = name
+                h["authorHasAvatar"] = has_avatar
+                changed = True
+        if changed:
+            out[k] = json.dumps(arr, separators=(",", ":"))
+    return out
+
+
+def _rewrite_avatar_urls(html: str, avatar_url: str) -> str:
+    if not avatar_url:
+        return html
+    return html.replace("/api/account/avatar", avatar_url)
+
+
 def _storage_seed_script(seed: dict[str, str]) -> str:
     """Inject early so reader JS loadHighlights() sees seeded data."""
     if not seed:
@@ -492,6 +597,10 @@ def main() -> None:
     ]
 
     ls_dump = _load_localstorage_dump()
+    profile = _load_account_profile(vdir)
+    ls_dump = _stamp_highlight_authors(ls_dump, profile)
+    print(f"account profile: displayName={profile['displayName']!r} hasAvatar={profile['hasAvatar']}")
+
     # Persist a copy next to the vault for future regenerations (not a secret).
     if ls_dump:
         cache = lib / "localstorage-export.json"
@@ -508,8 +617,16 @@ def main() -> None:
         shutil.rmtree(OUT)
     OUT.mkdir(parents=True)
 
+    avatar_url = ""
+    avatar_src = vdir / "avatar.jpg"
+    if avatar_src.is_file():
+        shutil.copy2(avatar_src, OUT / "avatar.jpg")
+        avatar_url = "/papers/avatar.jpg"
+        print(f"copied avatar → {OUT / 'avatar.jpg'}")
+
     written = 0
     seeded_papers = 0
+    profile_script = _profile_bootstrap_script(profile, avatar_url)
     for it in sorted(active_for_pages, key=lambda x: (x.get("title") or "").lower()):
         pid = str(it["id"])
         enc = vdir / f"{pid}.html.enc"
@@ -530,11 +647,17 @@ def main() -> None:
         else:
             html = BACK_SNIPPET + html
 
+        # Rewrite baked-in reader avatar URLs before injecting our bootstrap
+        # (bootstrap still intercepts the original /api/account/avatar path).
+        html = _rewrite_avatar_urls(html, avatar_url)
+
         title = _html_title(html) or (it.get("title") or "")
         seed = _seed_keys_for_title(ls_dump, title)
         # Also try vault title if HTML title differs (rare truncation edge cases).
         if not seed and it.get("title"):
             seed = _seed_keys_for_title(ls_dump, str(it["title"]))
+        # Profile first, then localStorage seed — both before reader JS.
+        html = _inject_head_script(html, profile_script)
         html = _inject_head_script(html, _storage_seed_script(seed))
         hl_vals = [
             v for k, v in seed.items() if k.startswith(HIGHLIGHT_PREFIX)
@@ -558,7 +681,7 @@ def main() -> None:
 
     # Library home needs all highlight keys so the info panel can list them.
     hl_seed = {k: v for k, v in ls_dump.items() if k.startswith(HIGHLIGHT_PREFIX)}
-    library_html = _build_library_index(pkg, library_papers)
+    library_html = _build_library_index(pkg, library_papers, profile, avatar_url)
     library_html = _inject_head_script(library_html, _storage_seed_script(hl_seed))
     (OUT / "index.html").write_text(library_html, encoding="utf-8")
     print(f"wrote library UI → {OUT / 'index.html'}")
@@ -570,6 +693,8 @@ def main() -> None:
         "totalHighlights": total_n,
         "highlightsWithNotes": noted_n,
         "seededReaderPages": seeded_papers,
+        "displayName": profile.get("displayName"),
+        "hasAvatar": bool(profile.get("hasAvatar")),
         "titles": [],
     }
     titles = []
@@ -583,10 +708,11 @@ def main() -> None:
         if isinstance(arr, list) and arr:
             titles.append(urllib.parse.unquote(k[len(HIGHLIGHT_PREFIX) :]))
     summary["titles"] = sorted(titles)
-    (OUT / "highlights.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    (OUT / "highlights.json").write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(
         f"highlights: {papers_n} papers, {total_n} highlights, "
-        f"{noted_n} with notes (seeded into {seeded_papers} reader pages)"
+        f"{noted_n} with notes (seeded into {seeded_papers} reader pages); "
+        f"author={profile.get('displayName')!r}"
     )
 
     _clear_hugo_papers_override()
