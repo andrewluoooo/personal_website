@@ -4,11 +4,6 @@
 	weight = 20
 
 [[main]]
-	name = "papers"
-	url = "/papers/"
-	weight = 25
-
-[[main]]
 	name = "notes"
 	url = "https://notes.andluo.com/"
 	weight = 30

@@ -164,10 +164,11 @@
 
     sortedMonths.forEach((key) => {
       const [year, month] = key.split("-");
-      const label = new Date(Number(year), Number(month) - 1, 1).toLocaleDateString(
-        "en-US",
-        { month: "short", year: "2-digit" }
-      );
+      const date = new Date(Number(year), Number(month) - 1, 1);
+      const label =
+        date.toLocaleDateString("en-US", { month: "short" }) +
+        " '" +
+        String(date.getFullYear()).slice(-2);
 
       html += `<div class="month-section" data-month="${escapeHtml(key)}">
         <div class="month-header">${escapeHtml(label)}</div>
@@ -256,9 +257,11 @@
     const monthKeys = Object.keys(monthlyData);
     const labels = monthKeys.map((key) => {
       const [year, month] = key.split("-");
-      return new Date(Number(year), Number(month) - 1, 1).toLocaleDateString(
-        "en-US",
-        { month: "short", year: "2-digit" }
+      const date = new Date(Number(year), Number(month) - 1, 1);
+      return (
+        date.toLocaleDateString("en-US", { month: "short" }) +
+        " '" +
+        String(date.getFullYear()).slice(-2)
       );
     });
     return { monthKeys, labels, data: Object.values(monthlyData) };

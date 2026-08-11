@@ -59,7 +59,7 @@
             {{ $key := . }}
             {{ $labelDate := printf "%s-01" $key | time.AsTime }}
             <div class="month-section" data-month="{{ $key }}">
-              <div class="month-header">{{ $labelDate.Format "Jan 06" }}</div>
+              <div class="month-header">{{ replace ($labelDate.Format "Jan 06") " " " '" }}</div>
               <div class="month-books">
                 {{ range index $byMonth $key }}
                   {{ $book := . }}
