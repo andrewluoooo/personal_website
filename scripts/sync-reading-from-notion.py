@@ -2,7 +2,8 @@
 """Sync finished Readwise Library books from Notion into static/data/reading.json.
 
 Only books tagged "finished" are included. Completion month/year comes from the
-other Document Tag (e.g. "Jul 26", "2026-07").
+other Document Tag (e.g. "Jul 26", "2026-07"). Cover images are mirrored and
+resized into static/img/reading-covers/ for fast local serving.
 
 Requires:
   NOTION_TOKEN  Integration token with access to the Readwise Library database
@@ -231,7 +232,17 @@ def main() -> int:
             f"Skipped {skipped_no_date} finished book(s) missing a month/year tag.",
             file=sys.stderr,
         )
-    return 0
+
+    # Mirror/resize covers locally so the homepage does not fetch huge remote images.
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from mirror_reading_covers import mirror_payload
+
+    mirrored, failed = mirror_payload(payload)
+    OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    print(f"Mirrored {mirrored} cover image(s) for local serving")
+    if failed:
+        print(f"{failed} cover(s) could not be mirrored.", file=sys.stderr)
+    return 0 if not failed else 1
 
 
 if __name__ == "__main__":

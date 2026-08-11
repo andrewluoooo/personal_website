@@ -161,6 +161,7 @@
     const sortedMonths = Object.keys(booksByMonth).sort();
     let html =
       '<div class="books-carousel" id="booksCarousel"><div class="carousel-content">';
+    let coverIndex = 0;
 
     sortedMonths.forEach((key) => {
       const [year, month] = key.split("-");
@@ -178,11 +179,16 @@
         const title = book.title || "Untitled";
         const author = book.author || "";
         const cover = book.cover || "";
+        const eager = coverIndex < 6;
+        coverIndex += 1;
+        const loadAttrs = eager
+          ? 'fetchpriority="high" decoding="async"'
+          : 'loading="lazy" decoding="async"';
         html += `<div class="book-card" data-index="${book.index}" title="${escapeHtml(title)}${author ? " — " + escapeHtml(author) : ""}">
           <div class="book-cover">
             ${
               cover
-                ? `<img class="book-img" src="${escapeHtml(cover)}" alt="${escapeHtml(title)}" loading="lazy" decoding="async" referrerpolicy="no-referrer">`
+                ? `<img class="book-img" src="${escapeHtml(cover)}" alt="${escapeHtml(title)}" width="70" height="100" ${loadAttrs}>`
                 : `<div class="book-cover-fallback" aria-hidden="true">${escapeHtml(title.charAt(0) || "?")}</div>`
             }
           </div>
