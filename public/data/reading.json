@@ -1,7 +1,7 @@
 {
   "source": "notion-readwise-library",
   "databaseId": "55c71ce9-e38c-8342-8bfb-816dc1c66604",
-  "syncedAt": "2026-08-11",
+  "syncedAt": "2026-08-23",
   "dateField": "Document Tags (month/year tag)",
   "filter": "Document Tags contains \"finished\"",
   "books": [
@@ -81,7 +81,7 @@
       "title": "Medium Raw: A Bloody Valentine to the World of Food and the People Who Cook",
       "author": "Anthony Bourdain",
       "date": "2026-08-01",
-      "highlights": 401,
+      "highlights": 411,
       "cover": "/img/reading-covers/medium-raw-a-bloody-valentine-to-the-world-of-fo-0bfdf220.webp",
       "tags": [
         "finished",
@@ -100,6 +100,18 @@
         "august26"
       ],
       "coverRemote": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/483185196/PPF7Mv1YVGiLELzj1X7UNoLgoB4E30zvHHGsuRyqLKo-cove_u3pXyUC.jpg"
+    },
+    {
+      "title": "The Boy Who Could Change the World",
+      "author": "Aaron Swartz",
+      "date": "2026-08-01",
+      "highlights": 406,
+      "cover": "/img/reading-covers/the-boy-who-could-change-the-world-35b1e1ae.webp",
+      "tags": [
+        "finished",
+        "august26"
+      ],
+      "coverRemote": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/483791954/MFe7pLu_vu3Zh5i1IqVKBDQz5h4yiIdWWlFrCdYxRhw-cove_M8UlC7J.jpg"
     }
   ]
 }
