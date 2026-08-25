@@ -1,1 +1,1 @@
-I'm a computer engineer. My research interests span embedded systems, chip design, EDA tools, digital design/verification, and ML accelerators. I am passionate about building open source tools. Reach me at [andrew.luo25@gmail.com](mailto:andrew.luo25@gmail.com).
+I'm a computer engineer. I like embedded systems, EDA tools, and FPGAs. I am passionate about building open source tools and writing. Reach me at [andrew.luo25@gmail.com](mailto:andrew.luo25@gmail.com).
