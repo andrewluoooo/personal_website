@@ -1,7 +1,7 @@
 {
   "source": "notion-readwise-library",
   "databaseId": "55c71ce9-e38c-8342-8bfb-816dc1c66604",
-  "syncedAt": "2026-08-23",
+  "syncedAt": "2026-08-28",
   "dateField": "Document Tags (month/year tag)",
   "filter": "Document Tags contains \"finished\"",
   "books": [
@@ -66,6 +66,18 @@
       "coverRemote": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/476626777/de5EupNeHbe2N73qaLW_RFrXe_yXGyLQz_duABM_oRY-cove_WKduosz.jpg"
     },
     {
+      "title": "Julian Assange in His Own Words",
+      "author": "Julian Assange",
+      "date": "2026-08-01",
+      "highlights": 50,
+      "cover": "/img/reading-covers/julian-assange-in-his-own-words-a23fe968.webp",
+      "tags": [
+        "august26",
+        "finished"
+      ],
+      "coverRemote": "https://readwise-assets.s3.amazonaws.com/media/reader/parsed_document_assets/485693644/P3BeHMtoA3yXj0ycZK0sP_083WFy7kRuxJBlC8F7_nc-cove_OY48EeX.jpg"
+    },
+    {
       "title": "Kitchen Confidential",
       "author": "Bourdain, Anthony",
       "date": "2026-08-01",
@@ -105,7 +117,7 @@
       "title": "The Boy Who Could Change the World",
       "author": "Aaron Swartz",
       "date": "2026-08-01",
-      "highlights": 406,
+      "highlights": 439,
       "cover": "/img/reading-covers/the-boy-who-could-change-the-world-35b1e1ae.webp",
       "tags": [
         "finished",
