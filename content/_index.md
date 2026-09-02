@@ -1,1 +1,1 @@
-I'm a computer engineer. I like embedded systems, EDA tools, and FPGAs. I am passionate about building open source tools and writing. Reach me at [andrew.luo25@gmail.com](mailto:andrew.luo25@gmail.com).
+I'm a computer engineer. I like embedded systems, EDA tools, and FPGAs. I am passionate about building open source tools, writing, coffee, and Lebron James. Reach me at [andrew.luo25@gmail.com](mailto:andrew.luo25@gmail.com).
